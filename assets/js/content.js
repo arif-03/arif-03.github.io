@@ -51,10 +51,6 @@ export const portfolio = {
     {
       title: "Deepfake Forensics",
       text: "Graph-attentional and comparative deep-learning approaches for robust manipulation detection, including degraded-image conditions."
-    },
-    {
-      title: "Low-resource NLP",
-      text: "Robust language models and ensemble methods for settings where labeled data and computational resources are limited."
     }
   ],
 
@@ -146,12 +142,6 @@ export const portfolio = {
       title: "Transfer Learning Optimization for Mango Fruit Disease Classification using a Bangladeshi Novel Dataset",
       venue: "Annals of Emerging Technologies in Computing",
       authors: "S. K. Ray, A. Islam, A. Kumar et al."
-    },
-    {
-      status: "Under Review",
-      title: "Precision Weeding in Agriculture: A Review of Deep Learning Methods for Weed Detection",
-      venue: "Review manuscript",
-      authors: "Research manuscript"
     }
   ],
 
@@ -233,7 +223,8 @@ export const portfolio = {
       description:
         "Taught digital logic, networking, web fundamentals, C programming and database fundamentals through worked examples and guided practical exercises.",
       image: "assets/images/success-point-pabna-instructor.webp"
-    },
+    }
+  ],
     
   leadership: [
     {
