@@ -11,7 +11,7 @@ export const portfolio = {
     role: "Computer Vision & Deep Learning Researcher",
     affiliation: "Department of Information and Communication Engineering, PUST",
     location: "Bangladesh",
-    email: "ariful.210637@s.pust.ac.bd",
+    email: "ariful.ice.pust@gmail.com",
     portrait: "assets/images/profile-ariful-islam.webp",
     headline: "Building practical AI for agriculture, healthcare and trustworthy digital media.",
     intro:
@@ -234,15 +234,7 @@ export const portfolio = {
         "Taught digital logic, networking, web fundamentals, C programming and database fundamentals through worked examples and guided practical exercises.",
       image: "assets/images/success-point-pabna-instructor.webp"
     },
-    {
-      period: "Academic Service",
-      role: "Peer Reviewer",
-      organization: "AETiC Journal",
-      description:
-        "Contributed to academic peer review, strengthening my experience with research evaluation, scholarly writing and publication standards."
-    }
-  ],
-
+    
   leadership: [
     {
       period: "2025–2026",
