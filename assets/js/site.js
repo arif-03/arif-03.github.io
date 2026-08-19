@@ -45,7 +45,7 @@ function renderHeader(d) {
     <div class="nav-shell shell">
       <a class="brand" href="index.html" aria-label="${esc(d.profile.name)} home">
         <span class="brand-mark">AI</span>
-        <span class="brand-copy"><strong>${esc(d.profile.name)}</strong><small>Research Portfolio</small></span>
+        <span class="brand-copy"><strong>${esc(d.profile.name)}</strong></span>
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">
         ${nav.map(([key,label,href]) => `<a class="nav-link ${page===key?"active":""} ${key==="sakura"?"nav-featured":""}" href="${href}">${esc(label)}</a>`).join("")}
