@@ -1,9 +1,9 @@
 {
-  "name": "Ariful Islam — Research Portfolio",
+  "name": "Ariful Islam — Academic & Research Portfolio",
   "short_name": "Ariful Islam",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f6f8fb",
-  "theme_color": "#0a6f68",
+  "background_color": "#f4f7f8",
+  "theme_color": "#08776f",
   "icons": []
 }

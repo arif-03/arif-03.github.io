@@ -1,143 +1,186 @@
 # Editing Guide
 
-The portfolio is intentionally data-driven. For most updates, edit only `assets/js/content.js`.
+The portfolio is designed so routine updates happen in one file:
 
-## 1. Update headline, bio or links
+```text
+assets/js/content.js
+```
 
-Find `profile` near the top of `content.js`.
+A syntax error in that file no longer leaves a completely blank page: `site.js` now shows a visible content-loading error. The GitHub validation workflow also checks JavaScript syntax after every commit.
+
+## 1. Change the homepage About section
+
+Find:
 
 ```js
 profile: {
-  name: "Ariful Islam",
-  role: "Computer Vision & Deep Learning Researcher",
-  headline: "...",
-  intro: "...",
-  bio: "...",
-  socials: [
-    { label: "GitHub", url: "https://github.com/arif-03" }
+  ...
+  about: [
+    "First paragraph...",
+    "Second paragraph..."
   ]
 }
 ```
 
-Add another social link by adding another `{ label, url }` object.
+Edit the strings. Keep commas between items.
 
-## 2. Add a publication
+## 2. Change the rotating cover
 
-Add an object to the `publications` array:
+Find:
+
+```js
+coverSlides: [
+  {
+    image: "assets/images/example.webp",
+    label: "Research communication",
+    title: "Presentation title"
+  }
+]
+```
+
+The homepage changes cover images every **2 seconds**. Add, remove or reorder objects in this array.
+
+## 3. Add a publication
+
+Find `publications: [` and add:
 
 ```js
 {
   type: "Conference Paper",
   year: "2027",
   title: "Your paper title",
-  venue: "Conference or journal name",
+  venue: "Conference / Journal",
   authors: "A. Islam, ...",
   note: "First author",
   doi: "https://doi.org/..."
-}
+},
 ```
 
-If there is no DOI yet, omit the `doi` line.
+Remove `note` if it is not needed.
 
-## 3. Change a manuscript status
+## 4. Update current research
 
-Find the item in `manuscripts` and change:
+Find:
 
 ```js
-status: "Submitted"
+currentWork: [
 ```
 
-to values such as:
+Update `status`, `title`, `venue`, `relation` and `description`.
 
-```js
-status: "Accepted"
+When a paper becomes formally published, move it into `publications` instead of leaving it only under current work.
+
+## 5. Add a certificate
+
+### Upload the PDF
+
+Put it in:
+
+```text
+assets/documents/certificates/
 ```
 
-or move the item into `publications` once it has a final publication record.
+Use a clean filename such as:
 
-## 4. Add a project
+```text
+my-new-certificate.pdf
+```
 
-Add an object to `projects`:
+### Add a preview image
+
+Put a WebP/JPG preview in:
+
+```text
+assets/images/certificates/
+```
+
+### Add the credential to `content.js`
 
 ```js
 {
-  title: "Project name",
-  category: "Computer Vision",
-  summary: "One concise paragraph.",
-  details: [
-    "What you built.",
-    "What problem it solves."
-  ],
-  tags: ["Python", "PyTorch"],
-  image: "assets/images/my-project.webp",
-  links: [
-    { label: "GitHub Repository", url: "https://github.com/..." }
-  ]
-}
+  id: "my-new-certificate",
+  category: "Technical",
+  title: "Certificate title",
+  issuer: "Issuer name",
+  date: "2027",
+  description: "What the certificate confirms.",
+  significance: "Why this credential matters in my academic or professional profile.",
+  file: "assets/documents/certificates/my-new-certificate.pdf",
+  preview: "assets/images/certificates/my-new-certificate.webp",
+  related: "research.html"
+},
 ```
 
-`image` and `links` are optional.
+Current certification categories are:
 
-## 5. Add an achievement
+- `International & Research`
+- `Technical`
+- `Leadership & Service`
+- `Awards & Competitions`
 
-Add to `achievements`:
+## 6. Add an achievement
+
+Find `achievements: [` and add:
 
 ```js
 {
   year: "2027",
-  title: "Award title",
-  context: "Organization or event",
-  image: "assets/images/award.webp",
-  certificate: "assets/documents/certificates/award.pdf"
-}
+  title: "Achievement title",
+  context: "Event / organization",
+  description: "A personalized explanation of what you did and why it mattered.",
+  image: "assets/images/achievement-photo.webp",
+  evidence: "assets/documents/certificates/evidence.pdf",
+  evidenceLabel: "View certificate"
+},
 ```
 
-Image and certificate are optional.
+`image`, `evidence` and `evidenceLabel` are optional.
 
-## 6. Add a gallery image
+## 7. Add a leadership role
 
-1. Put an optimized JPG/PNG/WebP file inside `assets/images/`.
-2. Add an item to `gallery`:
+Find `leadership: [` and use:
+
+```js
+{
+  period: "2027–2028",
+  role: "Role title",
+  organization: "Organization",
+  description: "What you actually did in the role.",
+  learning: "What the role taught you.",
+  image: "assets/images/leadership-photo.webp",
+  tags: ["Coordination", "Leadership"]
+},
+```
+
+## 8. Add a presentation or outreach activity
+
+Find `presentations: [` and add:
+
+```js
+{
+  date: "2027",
+  type: "Conference Presentation",
+  title: "Presentation title",
+  context: "Conference / venue",
+  description: "What you presented and what the experience added to your communication skills.",
+  image: "assets/images/presentation.webp",
+  evidence: "assets/documents/certificates/presentation.pdf"
+},
+```
+
+## 9. Add a gallery photograph
+
+Upload the image to `assets/images/`, then add:
 
 ```js
 {
   category: "Research",
-  title: "Presenting at Example Conference",
-  image: "assets/images/example-conference.webp"
-}
+  title: "Photo caption",
+  image: "assets/images/photo.webp"
+},
 ```
 
-The filter button for a new category is generated automatically.
-
-## 7. Add or remove a page
-
-Page navigation is defined in `assets/js/site.js` in the `navItems` array. Each root HTML page uses a `data-page` value to select a renderer.
-
-For ordinary content updates, you do not need to change this.
-
-## 8. Change colors or typography
-
-Edit CSS variables at the top of `assets/css/styles.css`:
-
-```css
-:root {
-  --bg: #f6f8fb;
-  --text: #102033;
-  --accent: #0a6f68;
-}
-```
-
-Dark-theme variables are directly below them.
-
-## 9. Replace the profile photograph
-
-Replace:
-
-```text
-assets/images/profile-ariful-islam.webp
-```
-
-with another WebP file using the same filename, or change `profile.portrait` in `content.js`.
+The gallery filters are created automatically from category names.
 
 ## 10. Replace the CV
 
@@ -147,20 +190,52 @@ Replace:
 assets/documents/Ariful-Islam-CV.pdf
 ```
 
-using the same filename. No code change is required.
+with the new PDF using the **same filename**. Existing Download CV buttons will continue to work.
 
-## Recommended update workflow
+## 11. Change the design
 
-```bash
-git pull
-# edit content/images
-# no build step is required
-python scripts/validate.py
-python -m http.server 8000
-# inspect locally, then:
-git add .
-git commit -m "Update publications and projects"
-git push
+Edit:
+
+```text
+assets/css/styles.css
 ```
 
-The workflow is simply: edit → validate → preview → push.
+The main design variables are at the top under `:root`.
+
+## 12. Test before commit
+
+Run:
+
+```bash
+python scripts/validate.py
+```
+
+For a local browser preview:
+
+```bash
+python -m http.server 8000
+```
+
+then visit `http://localhost:8000/`.
+
+## Important syntax rule
+
+This is valid:
+
+```js
+{
+  title: "Example",
+  year: "2027"
+},
+```
+
+This is invalid because a comma is missing:
+
+```js
+{
+  title: "Example"
+  year: "2027"
+}
+```
+
+If GitHub Actions reports a JavaScript syntax failure, open the last edited part of `content.js` first.

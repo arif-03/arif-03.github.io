@@ -1,81 +1,104 @@
-# Ariful Islam — Research Portfolio
+# Ariful Islam — Academic & Research Portfolio
 
-A modern, dependency-free personal research portfolio for **https://arif-03.github.io/**. The site is designed for GitHub Pages and uses only HTML, CSS and vanilla JavaScript, so there is no npm build, framework lock-in or paid hosting requirement.
+Static, dependency-free GitHub Pages portfolio for `https://arif-03.github.io/`.
 
-## What is included
+The site is intentionally organized as an expanded companion to the CV. A CV reader can move from a short entry (education, research, experience, certification, achievement, presentation) to supporting descriptions, photographs, certificates and official letters here.
 
-- Modern responsive homepage with research-first positioning
-- Dedicated pages for Research, Publications, Projects, Journey, Sakura Science, Achievements and Gallery
-- Dark/light theme with saved user preference
-- Accessible mobile navigation, keyboard-friendly image lightbox and reduced-motion support
-- Optimized WebP versions of all supplied portfolio photographs/graphics
-- Downloadable CV and supplied achievement/presentation certificates
-- Search/social metadata, sitemap, robots.txt, favicon and custom 404 page
-- One central content file for most future edits: `assets/js/content.js`
-- A validation script and GitHub Action that catch missing local assets or JavaScript syntax errors
+## Site structure
 
-## Local preview
+- `index.html` — Home / CV companion overview with rotating cover
+- `education.html` — Education, thesis and coursework
+- `research.html` — Research interests, selected research, dataset, current work and skills
+- `publications.html` — Peer-reviewed publications and dataset DOI links
+- `projects.html` — Three selected projects in a uniform case-study layout
+- `experiences.html` — Teaching, mentoring, leadership and service
+- `sakura.html` — Dedicated Sakura Science Exchange Program 2025 page
+- `achievements.html` — Scholarship, competitions and recognition
+- `certifications.html` — Certificates, official letters and evidence files
+- `presentations.html` — Conference presentations, outreach and media communication
+- `gallery.html` — Filterable visual archive
+- `journey.html` — Compatibility redirect to `experiences.html`
 
-From the repository folder:
+## Edit content first
 
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in a browser.
-
-> Do not preview by double-clicking `index.html`; the site uses JavaScript modules, which browsers expect to be served over HTTP.
-
-## Publish on GitHub Pages
-
-1. Create a **public** GitHub repository named exactly `arif-03.github.io` under the `arif-03` account.
-2. Copy all files from this folder into that repository.
-3. Commit and push to the default branch.
-4. In GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**.
-5. Choose the default branch and `/ (root)`, then save.
-6. The site will be available at `https://arif-03.github.io/` after GitHub finishes deployment.
-
-Example command-line setup:
-
-```bash
-git init
-git add .
-git commit -m "Launch research portfolio"
-git branch -M main
-git remote add origin https://github.com/arif-03/arif-03.github.io.git
-git push -u origin main
-```
-
-## Edit the portfolio
-
-Most text, publication entries, projects, links, achievements, skills and gallery items are in:
+Most text, links, cards, achievements, credentials and image references are stored in:
 
 ```text
 assets/js/content.js
 ```
 
-See **[EDITING.md](EDITING.md)** for copy-and-paste examples.
+The page renderer is:
 
-For global design changes, edit:
+```text
+assets/js/site.js
+```
+
+Global design is:
 
 ```text
 assets/css/styles.css
 ```
 
-The root HTML files mainly hold page metadata and load the shared layout/script.
+See `EDITING.md` for examples.
 
-## Content/privacy choices in this version
+## Local preview
 
-The public website includes the academic email from the supplied CV. It intentionally does **not** publish the supplied personal phone number or referees' phone/email details. Those remain available inside the downloadable CV if present there.
+From the repository root:
 
-## Source notes
+```bash
+python -m http.server 8000
+```
 
-This site was created from the supplied CV package and `Portfolio.zip`. Original media were normalized for orientation, resized where necessary and exported to WebP for faster GitHub Pages delivery. The deployable portfolio is roughly a fraction of the original media size while preserving the originals outside this repository.
+Open:
 
-## Validate before pushing
+```text
+http://localhost:8000/
+```
+
+Do not open the HTML files directly with `file://` because the site uses JavaScript modules.
+
+## Validate before publishing
 
 ```bash
 python scripts/validate.py
 ```
 
-The same check runs automatically on GitHub when changes are pushed.
+The validator checks:
+
+- HTML file references
+- local images/documents referenced by the data and renderer
+- JavaScript syntax with Node when available
+
+A GitHub Actions workflow runs the same validation after pushes and pull requests.
+
+## Publish on GitHub Pages
+
+Repository name:
+
+```text
+arif-03.github.io
+```
+
+GitHub Pages settings:
+
+```text
+Source: Deploy from a branch
+Branch: main
+Folder: / (root)
+```
+
+After a commit to `main`, GitHub Pages automatically republishes the site.
+
+## Add the portfolio to the CV
+
+Use this URL in the CV header/contact area:
+
+```text
+https://arif-03.github.io/
+```
+
+Suggested label: `Portfolio` or `Academic Portfolio`.
+
+## Privacy
+
+The public site intentionally does not expose the phone numbers or contact details of academic referees. The downloadable CV can be managed separately depending on what should be public.
