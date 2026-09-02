@@ -169,6 +169,14 @@ export const portfolio = {
       authors: "K. Ahmad, M. C. Chanda, A. Islam, M. M. Khatun, S. R. Al Ahmed, M. S. Hosain",
       doi: "https://doi.org/10.1109/PECCII70991.2026.11661872"
     },
+        {
+      type: "Conference Paper",
+      year: "2024",
+      title: "Deep Learning Based Lung Image Segmentation Using XR-U-Net",
+      venue: "2024 27th International Conference on Computer and Information Technology (ICCIT)",
+      authors: "S. K. Ray, A. Islam, M. C. Chanda, S. A. Oishi, M. S. Hosain",
+      doi: "https://doi.org/10.1109/ICCIT64611.2024.11022346"
+    },
     {
       type: "Conference Paper",
       year: "2025",
@@ -185,14 +193,7 @@ export const portfolio = {
       authors: "S. H. Turza, A. Mahdi, M. I. S. Shad, M. H. Kabir, A. Islam",
       doi: "https://doi.org/10.1109/ICCIT68739.2025.11491228"
     },
-    {
-      type: "Conference Paper",
-      year: "2024",
-      title: "Deep Learning Based Lung Image Segmentation Using XR-U-Net",
-      venue: "2024 27th International Conference on Computer and Information Technology (ICCIT)",
-      authors: "S. K. Ray, A. Islam, M. C. Chanda, S. A. Oishi, M. S. Hosain",
-      doi: "https://doi.org/10.1109/ICCIT64611.2024.11022346"
-    },
+
     {
       type: "Dataset",
       year: "2026",
