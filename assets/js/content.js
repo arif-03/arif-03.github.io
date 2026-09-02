@@ -9,7 +9,7 @@ export const portfolio = {
     role: "Computer Vision & Deep Learning Researcher",
     affiliation: "Department of Information and Communication Engineering, Pabna University of Science and Technology, Pabna, Bangladesh",
     location: "Bangladesh",
-    email: "ariful.210637@s.pust.ac.bd",
+    email: "ariful.ice.pust@gmail.com",
     portrait: "assets/images/profile-ariful-islam.webp",
     headline: "Engineering practical AI for agriculture, healthcare and trustworthy digital media.",
     status: "Final B.Sc. examination completed; final result pending.",
@@ -25,7 +25,7 @@ export const portfolio = {
       { label: "LinkedIn", url: "https://www.linkedin.com/in/ariful-islam03/", icon: "fab fa-linkedin-in" },
       { label: "Google Scholar", url: "https://scholar.google.com/citations?user=J_8UeyoAAAAJ&hl=en", icon: "fas fa-graduation-cap" },
       { label: "Codeforces", url: "https://codeforces.com/profile/Arif.03", icon: "fas fa-code" },
-      { label: "Email", url: "mailto:ariful.210637@s.pust.ac.bd", icon: "fas fa-envelope" }
+      { label: "Email", url: "mailto:ariful.ice.pust@gmail.com", icon: "fas fa-envelope" }
     ]
   },
 
@@ -61,7 +61,7 @@ export const portfolio = {
 
   researchExperience: [
     {
-      title: "MangoFruitBD & YOLO-Based Mango Health Detection",
+      title: "Building MangoFruitBD & YOLO-Based Mango Fruit Health Detection in Real Orchard Condition",
       period: "2025–2026",
       summary: "My undergraduate research grew from orchard-level data acquisition into an end-to-end computer vision pipeline for classifying healthy and diseased mangoes under challenging field conditions.",
       contributions: [
@@ -198,10 +198,10 @@ export const portfolio = {
       type: "Dataset",
       year: "2026",
       title: "MangoFruitBD: A Bounding-Box Annotated Image Dataset for Detecting Healthy and Diseased Mango Fruits in Bangladeshi Orchards",
-      venue: "Mendeley Data, Version 1",
+      venue: "Mendeley Data, Version 2",
       authors: "A. Islam, S. A. Oishi, M. M. Hasan, M. Mamun, M. S. Hosain",
       note: "First author · Dataset Lead",
-      doi: "https://doi.org/10.17632/bhrz29mkmr.1"
+      doi: "https://doi.org/10.17632/bhrz29mkmr.2"
     }
   ],
 
