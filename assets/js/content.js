@@ -99,11 +99,11 @@ export const portfolio = {
       "4 Diagnostic Classes (Healthy, Anthracnose, Alternaria, Scab)",
       "CVAT & Roboflow Annotation Pipeline",
       "Real-field Natural Backgrounds",
-      "Bounding-Box YOLO & COCO Formats",
-      "Mendeley Data · Open Access Version 1"
+      "Bounding-Box YOLO Format",
+      "Mendeley Data · Open Access Version 2"
     ],
-    annotationSkills: ["CVAT (Computer Vision Annotation Tool)", "Roboflow", "LabelImg", "Field Data Acquisition", "Data Quality Auditing", "Dataset Splitting & Augmentation"],
-    doi: "https://doi.org/10.17632/bhrz29mkmr.1"
+    annotationSkills: ["CVAT (Computer Vision Annotation Tool)", "Roboflow", "LabelImg", "Field Data Acquisition", "Data Quality Auditing", "Dataset Splitting & Augmentation", "Data Curation"],
+    doi: "https://doi.org/10.17632/bhrz29mkmr.2"
   },
 
   currentWork: [
