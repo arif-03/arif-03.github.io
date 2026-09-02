@@ -1,7 +1,5 @@
 /*
- * PRIMARY EDITING FILE
- * --------------------
- * This portfolio is data-driven.
+ * PRIMARY DATA FILE: assets/js/content.js
  */
 
 export const portfolio = {
@@ -40,19 +38,21 @@ export const portfolio = {
 
   portalSections: [
     { icon: "fas fa-graduation-cap", title: "Education", desc: "B.Sc. in ICE at PUST, academic milestones, undergraduate thesis and coursework.", href: "education.html" },
-    { icon: "fas fa-microscope", title: "Research", desc: "Core research focus, MangoFruitBD, deepfake forensics, and technical toolkit.", href: "research.html" },
+    { icon: "fas fa-microscope", title: "Research", desc: "Core research focus, MangoFruitBD dataset creation, deepfake forensics, and technical toolkit.", href: "research.html" },
     { icon: "fas fa-book-open", title: "Publications", desc: "7 peer-reviewed IEEE conference papers, Mendeley dataset, and DOI links.", href: "publications.html" },
     { icon: "fas fa-globe-asia", title: "Sakura Science", desc: "International academic exchange record at University of Yamanashi, Japan.", href: "sakura.html" },
     { icon: "fas fa-laptop-code", title: "Projects", desc: "Technical, embedded systems, and database case studies with evidence.", href: "projects.html" },
     { icon: "fas fa-certificate", title: "Certifications", desc: "Official letters, international certificates, and verified credentials.", href: "certifications.html" },
     { icon: "fas fa-trophy", title: "Achievements", desc: "Merit scholarship, programming contests, debates, and campus awards.", href: "achievements.html" },
-    { icon: "fas fa-users", title: "Experiences", desc: "ICT teaching, mentoring, and student association leadership roles.", href: "experiences.html" },
-    { icon: "fas fa-chalkboard-teacher", title: "Presentations", desc: "Conference presentations, research communication, and media outreach.", href: "presentations.html" },
+    { icon: "fas fa-chalkboard-user", title: "Experiences", desc: "ICT teaching, pedagogical instruction, and academic mentoring.", href: "experiences.html" },
+    { icon: "fas fa-users-gear", title: "Extra-Curricular", desc: "Student leadership, welfare governance, youth development, and club administration.", href: "extracurricular.html" },
+    { icon: "fas fa-chalkboard-teacher", title: "Presentations", desc: "Conference presentations, Japan Sakura research proposal, and media outreach.", href: "presentations.html" },
     { icon: "fas fa-images", title: "Gallery", desc: "Visual records from Japan, research presentations, and campus events.", href: "gallery.html" }
   ],
 
   researchFocus: [
     { title: "Computer Vision & Deep Learning", text: "Object detection, fine-grained classification, and semantic segmentation frameworks designed for real-world environmental variability.", mark: "CV" },
+    { title: "Dataset Engineering & Curation", text: "Field image acquisition, precise bounding-box annotation using CVAT/LabelImg, multi-stage quality auditing, and class balancing.", mark: "DATA" },
     { title: "AI for Smart Agriculture", text: "Field-collected datasets, disease identification, precision crop management, and vision-assisted agricultural decision support systems.", mark: "Ag" },
     { title: "Healthcare AI & Biosignals", text: "Biomedical image segmentation, PPG signal processing, and mobile machine learning solutions for accessible clinical diagnostics.", mark: "Hx" },
     { title: "Deepfake Forensics & Robust AI", text: "Graph-attentional relational reasoning and architecture comparative robustness against realistic social media image degradation.", mark: "DF" },
@@ -65,12 +65,13 @@ export const portfolio = {
       period: "2025–2026",
       summary: "My undergraduate research grew from orchard-level data acquisition into an end-to-end computer vision pipeline for classifying healthy and diseased mangoes under challenging field conditions.",
       contributions: [
-        "Co-developed a field-collected dataset of 1,310 RGB orchard images across Healthy, Anthracnose, Alternaria, and Scab classes.",
-        "Conducted extensive bounding-box annotations, dataset structuring, and train/validation/test partitioning.",
-        "Engineered and benchmarked YOLOv8/v11 detection models against occlusions, complex lighting, and background foliage."
+        "Led field-level RGB image acquisition in Bangladeshi orchards under variable lighting, natural occlusions, and background clutter.",
+        "Conducted and supervised rigorous bounding-box annotation using CVAT, Roboflow, and LabelImg across Healthy, Anthracnose, Alternaria, and Scab classes.",
+        "Established standardized train/validation/test partitions and applied robust geometric and photometric data augmentation.",
+        "Engineered and benchmarked YOLOv8/v11 detection models, attaining superior mean Average Precision (mAP) against field noise."
       ],
-      outcome: "Formed my undergraduate thesis foundation, published as an open-access Mendeley Data repository, and submitted as a comprehensive journal manuscript to Computers and Electronics in Agriculture.",
-      tags: ["YOLO", "Dataset Curation", "Smart Agriculture", "Object Detection"]
+      outcome: "Formed my undergraduate thesis foundation, published as an open-access Mendeley Data repository, and submitted as a comprehensive journal manuscript to Computers and Electronics in Agriculture (Elsevier).",
+      tags: ["YOLO", "Dataset Curation", "CVAT", "Roboflow", "Smart Agriculture", "Object Detection"]
     },
     {
       title: "GR-ACE Net & Deepfake Forensics Under Image Degradation",
@@ -91,9 +92,17 @@ export const portfolio = {
     title: "MangoFruitBD",
     subtitle: "A Bounding-Box Annotated Image Dataset for Detecting Healthy and Diseased Mango Fruits in Bangladeshi Orchards",
     year: "2026",
-    role: "First Author / Dataset Lead",
-    summary: "MangoFruitBD is the public data foundation behind my mango-health research. Building it taught me that model performance begins long before training—with rigorous field collection, consistent annotation, clear class taxonomy, and reproducible dataset engineering.",
-    facts: ["1,310 RGB Orchard Images", "4 Diagnostic Classes", "Real-field Backgrounds", "Bounding-box Annotations", "Mendeley Data · Version 1"],
+    role: "First Author / Dataset Lead & Curator",
+    summary: "MangoFruitBD is the public data foundation behind my mango-health research. Building it taught me that model performance begins long before training—with rigorous field acquisition, consistent annotation via CVAT, clear class taxonomy, and reproducible dataset engineering.",
+    facts: [
+      "1,310 RGB Orchard Images",
+      "4 Diagnostic Classes (Healthy, Anthracnose, Alternaria, Scab)",
+      "CVAT & Roboflow Annotation Pipeline",
+      "Real-field Natural Backgrounds",
+      "Bounding-Box YOLO & COCO Formats",
+      "Mendeley Data · Open Access Version 1"
+    ],
+    annotationSkills: ["CVAT (Computer Vision Annotation Tool)", "Roboflow", "LabelImg", "Field Data Acquisition", "Data Quality Auditing", "Dataset Splitting & Augmentation"],
     doi: "https://doi.org/10.17632/bhrz29mkmr.1"
   },
 
@@ -103,14 +112,25 @@ export const portfolio = {
       title: "Development and Evaluation of a YOLO-Based Mango Fruit Health Detection Framework Using the MangoFruitBD Dataset",
       venue: "Computers and Electronics in Agriculture (Elsevier)",
       relation: "Undergraduate Thesis Research",
-      description: "Extends the MangoFruitBD benchmark into an end-to-end detection and severity quantification framework for precision orchard management."
+      authors: "A. Islam, S. A. Oishi, M. M. Hasan, M. Mamun, M. S. Hosain*",
+      description: "Consolidates the MangoFruitBD benchmark into an end-to-end detection and disease severity quantification framework for precision orchard management."
+    },
+    {
+      status: "Submitted",
+      title: "Transfer Learning Optimization for Mango Fruit Disease Classification: A Benchmark Study on a Novel Bangladeshi Dataset",
+      venue: "Annals of Emerging Technologies in Computing [Q2; CiteScore: 4.0]",
+      relation: "Collaborative Journal Research",
+      authors: "Sajeeb Kumar Ray, Ariful Islam, Anomik Kumar, Sadia Afroz Oishi, Md Akash Miya, Md. Anwar Hossain*",
+      affiliations: "Varendra University & Pabna University of Science and Technology",
+      description: "A comprehensive benchmark study optimizing transfer learning architectures for multiclass mango fruit disease classification using the field-collected Bangladeshi dataset."
     },
     {
       status: "Under Review",
       title: "Precision Weeding in Agriculture: A Review of Deep Learning Methods for Weed Detection",
       venue: "Review Manuscript",
       relation: "Survey & Synthesis",
-      description: "Comprehensive review synthesizing deep learning paradigms, sensor modalities, and hardware constraints in robotic precision weeding."
+      authors: "A. Islam et al.",
+      description: "Comprehensive survey synthesizing deep learning paradigms, sensor modalities, and hardware constraints in robotic precision weeding."
     }
   ],
 
@@ -179,7 +199,7 @@ export const portfolio = {
       title: "MangoFruitBD: A Bounding-Box Annotated Image Dataset for Detecting Healthy and Diseased Mango Fruits in Bangladeshi Orchards",
       venue: "Mendeley Data, Version 1",
       authors: "A. Islam, S. A. Oishi, M. M. Hasan, M. Mamun, M. S. Hosain",
-      note: "First author",
+      note: "First author · Dataset Lead",
       doi: "https://doi.org/10.17632/bhrz29mkmr.1"
     }
   ],
@@ -449,7 +469,7 @@ export const portfolio = {
       significance: "National-level leadership and organizational recognition.",
       file: "assets/documents/certificates/yunet-q1-top3-campus-coordinator.pdf",
       preview: "assets/images/certificates/yunet-q1-top3-campus-coordinator.webp",
-      related: "experiences.html"
+      related: "extracurricular.html"
     },
     {
       id: "speak-up",
@@ -461,7 +481,7 @@ export const portfolio = {
       significance: "Demonstrated capacity in national-scale event execution.",
       file: "assets/documents/certificates/yunet-speak-up-bangladesh-core-organizer.pdf",
       preview: "assets/images/certificates/yunet-speak-up-bangladesh-core-organizer.webp",
-      related: "experiences.html"
+      related: "extracurricular.html"
     },
     {
       id: "dbbl-scholarship",
@@ -583,6 +603,16 @@ export const portfolio = {
 
   presentations: [
     {
+      date: "28 Oct 2025",
+      type: "International Research Proposal Presentation",
+      title: "Deep Learning Architectures for Agricultural & Vision AI Applications",
+      context: "Sakura Science Exchange Program · University of Yamanashi, Japan",
+      description: "Formulated, presented, and defended an applied deep learning research proposal before Japanese professors and research scholars during the academic exchange in Yamanashi.",
+      image: "assets/images/sakura-deep-learning-presentation.webp",
+      secondaryImage: "assets/images/sakura-deep-learning-presentation-2.webp",
+      evidence: "assets/documents/certificates/sakura-science-exchange-certificate.pdf"
+    },
+    {
       date: "17–18 Jun 2026",
       type: "Conference Presentation",
       title: "GR-ACE Net: A Hybrid Graph-Attentional Framework with Global Relational Reasoning for Deepfake Forensics",
@@ -677,16 +707,16 @@ export const portfolio = {
       ]
     },
     {
-      title: "Research & Dataset Engineering",
-      icon: "fas fa-database",
-      description: "Complete pipeline from field data acquisition to scholarly publication.",
+      title: "Dataset Engineering & Annotation",
+      icon: "fas fa-draw-polygon",
+      description: "Complete workflow from field data acquisition to bounding-box annotation and quality auditing.",
       items: [
+        { name: "CVAT", mark: "CVAT" },
+        { name: "Roboflow", mark: "ROBO" },
+        { name: "LabelImg", mark: "LBL" },
         { name: "Field Image Acquisition", mark: "IMG" },
         { name: "Bounding-Box Annotation", mark: "BOX" },
-        { name: "Dataset Augmentation", mark: "AUG" },
-        { name: "Evaluation & Benchmarking", mark: "EVAL" },
-        { name: "Scientific Writing", mark: "WRITE" },
-        { name: "LaTeX & Overleaf", mark: "TEX" }
+        { name: "Dataset Auditing & Splitting", mark: "AUDIT" }
       ]
     },
     {
@@ -711,6 +741,7 @@ export const portfolio = {
         { name: "VS Code", mark: "VS" },
         { name: "Jupyter & Kaggle", mark: "NB" },
         { name: "Git & GitHub", mark: "GIT" },
+        { name: "LaTeX / Overleaf", mark: "TEX" },
         { name: "Proteus", mark: "PRO" },
         { name: "MikroC", mark: "uC" },
         { name: "Cisco Packet Tracer", mark: "CPT" }

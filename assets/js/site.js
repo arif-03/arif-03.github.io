@@ -24,6 +24,7 @@ function renderHeader(activePage) {
     { label: "Certifications", href: "certifications.html", key: "certifications" },
     { label: "Achievements", href: "achievements.html", key: "achievements" },
     { label: "Experiences", href: "experiences.html", key: "experiences" },
+    { label: "Extra-Curricular", href: "extracurricular.html", key: "extracurricular" },
     { label: "Presentations", href: "presentations.html", key: "presentations" },
     { label: "Gallery", href: "gallery.html", key: "gallery" }
   ];
@@ -34,14 +35,26 @@ function renderHeader(activePage) {
   header.innerHTML = `
     <header class="navbar">
       <a class="nav-brand" href="index.html">ARIFUL <span>ISLAM</span></a>
-      <nav class="nav-links" id="nav-links-container">
-        ${navItems
-          .map(
-            (item) =>
-              `<a class="${activePage === item.key ? "active-nav" : ""}" href="${item.href}">${item.label}</a>`
-          )
-          .join("")}
-      </nav>
+      
+      <div class="nav-scroll-wrapper">
+        <button class="nav-scroll-btn left" id="nav-scroll-left" aria-label="Scroll menu left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <nav class="nav-links" id="nav-links-container">
+          ${navItems
+            .map(
+              (item) =>
+                `<a class="${activePage === item.key ? "active-nav" : ""}" href="${item.href}">${item.label}</a>`
+            )
+            .join("")}
+        </nav>
+
+        <button class="nav-scroll-btn right" id="nav-scroll-right" aria-label="Scroll menu right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
       <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -50,10 +63,33 @@ function renderHeader(activePage) {
 
   const toggleBtn = $("#nav-toggle-btn");
   const navLinks = $("#nav-links-container");
+  const scrollLeftBtn = $("#nav-scroll-left");
+  const scrollRightBtn = $("#nav-scroll-right");
+
   if (toggleBtn && navLinks) {
     toggleBtn.addEventListener("click", () => {
       navLinks.classList.toggle("mobile-open");
     });
+  }
+
+  if (scrollLeftBtn && navLinks) {
+    scrollLeftBtn.addEventListener("click", () => {
+      navLinks.scrollBy({ left: -220, behavior: "smooth" });
+    });
+  }
+
+  if (scrollRightBtn && navLinks) {
+    scrollRightBtn.addEventListener("click", () => {
+      navLinks.scrollBy({ left: 220, behavior: "smooth" });
+    });
+  }
+
+  // Auto-scroll active nav item into view
+  const activeLink = $(".nav-links a.active-nav");
+  if (activeLink && navLinks) {
+    setTimeout(() => {
+      activeLink.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }, 100);
   }
 }
 
@@ -93,6 +129,7 @@ function renderFooter() {
           <a href="certifications.html">Certifications</a>
           <a href="achievements.html">Achievements</a>
           <a href="experiences.html">Experiences</a>
+          <a href="extracurricular.html">Extra-Curricular</a>
           <a href="presentations.html">Presentations</a>
           <a href="gallery.html">Gallery</a>
         </div>
@@ -267,7 +304,7 @@ function renderEducation(d) {
 
 function renderResearch(d) {
   $("#page-content").innerHTML = `
-    ${pageHero("Research & Scientific Work", "Computer Vision, Smart Agriculture, Deepfake Forensics, and Biomedical AI.", "From orchard-level image dataset curation to graph-attentional deep neural network engineering.", "Scholarly Research")}
+    ${pageHero("Research & Scientific Work", "Computer Vision, Dataset Curation with CVAT, Deepfake Forensics, and Biomedical AI.", "From orchard-level image dataset curation to graph-attentional deep neural network engineering.", "Scholarly Research")}
 
     <section class="section" style="padding-top: 20px;">
       <div class="section-container">
@@ -297,13 +334,17 @@ function renderResearch(d) {
                 <span class="research-case-period">${esc(r.period)}</span>
               </div>
               <h2 class="research-case-title">${esc(r.title)}</h2>
-              ${r.image ? `<div style="max-height: 280px; overflow: hidden; border-radius: 12px; margin-bottom: 16px;"><img src="${r.image}" alt="${esc(r.title)}" style="width: 100%; height: 100%; object-fit: cover;"></div>` : ""}
+              ${
+                r.image
+                  ? `<div class="media-frame"><img src="${r.image}" alt="${esc(r.title)}"></div>`
+                  : ""
+              }
               <p class="research-case-summary">${esc(r.summary)}</p>
               <ul class="research-case-contributions">
                 ${r.contributions.map((c) => `<li>${esc(c)}</li>`).join("")}
               </ul>
               <div class="learning-box">
-                <span>Research Impact &amp; Learning</span>
+                <span>Research Impact &amp; Methodology</span>
                 <p>${esc(r.outcome)}</p>
               </div>
               <div class="tag-list">
@@ -315,14 +356,22 @@ function renderResearch(d) {
             .join("")}
         </div>
 
-        <!-- DATASET HIGHLIGHT -->
-        <h2 class="section-title" style="margin-top: 40px;">Published Research <span class="accent-text">Dataset</span></h2>
+        <!-- DATASET HIGHLIGHT (EMPHASIZED) -->
+        <h2 class="section-title" style="margin-top: 40px;">Featured Published <span class="accent-text">Dataset (MangoFruitBD)</span></h2>
         <article class="dataset-showcase">
           <div>
-            <span class="pub-tag dataset-tag" style="margin-bottom: 10px; display: inline-block;">Open Access Research Data</span>
-            <h2 style="font-size: 22px; font-weight: 800; color: #0b1329; margin-bottom: 6px;">${esc(d.dataset.title)}</h2>
-            <p style="color: var(--primary-accent); font-weight: 600; font-size: 14.5px; margin-bottom: 12px;">${esc(d.dataset.subtitle)}</p>
+            <span class="pub-tag dataset-tag" style="margin-bottom: 10px; display: inline-block;"><i class="fas fa-database"></i> Open Access Research Data</span>
+            <h2 style="font-size: 23px; font-weight: 800; color: #0b1329; margin-bottom: 6px;">${esc(d.dataset.title)}</h2>
+            <p style="color: var(--primary-accent); font-weight: 700; font-size: 15px; margin-bottom: 12px;">${esc(d.dataset.subtitle)}</p>
             <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">${esc(d.dataset.summary)}</p>
+            
+            <div style="margin-top: 14px;">
+              <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--primary-accent);">Dataset Annotation &amp; Curation Tools:</span>
+              <div class="skills-pill-group">
+                ${d.dataset.annotationSkills.map((s) => `<span class="skill-pill"><i class="fas fa-check-circle"></i> ${esc(s)}</span>`).join("")}
+              </div>
+            </div>
+
             <div class="dataset-facts-grid">
               ${d.dataset.facts.map((f) => `<span class="dataset-fact-chip">${esc(f)}</span>`).join("")}
             </div>
@@ -333,17 +382,21 @@ function renderResearch(d) {
           </div>
         </article>
 
-        <!-- CURRENT WORK -->
-        <h2 class="section-title" style="margin-top: 40px;">Undergraduate Thesis &amp; <span class="accent-text">Current Work</span></h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        <!-- CURRENT WORK / SUBMITTED PAPERS -->
+        <h2 class="section-title" style="margin-top: 40px;">Submitted &amp; <span class="accent-text">Current Research Manuscripts</span></h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 22px;">
           ${d.currentWork
             .map(
               (w) => `
-            <div class="focus-card">
-              <span class="pub-tag" style="margin-bottom: 10px; display: inline-block;">${esc(w.status)} · ${esc(w.relation)}</span>
-              <h3 style="font-size: 18px; margin-bottom: 8px;">${esc(w.title)}</h3>
-              <p style="color: var(--primary-accent); font-weight: 600; font-size: 13.5px; margin-bottom: 8px;">${esc(w.venue)}</p>
-              <p style="font-size: 14px; color: var(--text-muted);">${esc(w.description)}</p>
+            <div class="focus-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="pub-tag" style="margin-bottom: 10px; display: inline-block;">${esc(w.status)} · ${esc(w.relation)}</span>
+                <h3 style="font-size: 18px; margin-bottom: 8px; line-height: 1.4;">${esc(w.title)}</h3>
+                <p style="color: var(--primary-accent); font-weight: 700; font-size: 13.5px; margin-bottom: 6px;">${esc(w.venue)}</p>
+                ${w.authors ? `<p style="font-size: 13px; color: var(--text-muted); margin-bottom: 6px;"><b>Authors:</b> ${esc(w.authors)}</p>` : ""}
+                ${w.affiliations ? `<p style="font-size: 12px; color: var(--text-dim); margin-bottom: 8px; font-style: italic;">${esc(w.affiliations)}</p>` : ""}
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">${esc(w.description)}</p>
+              </div>
             </div>
           `
             )
@@ -381,14 +434,14 @@ function renderPublications(d) {
   const dataCount = d.publications.filter((p) => p.type === "Dataset").length;
 
   $("#page-content").innerHTML = `
-    ${pageHero("Scholarly Publications & Data", "7 Peer-Reviewed IEEE Conference Papers and 1 Published Research Dataset.", "Formal citation structure with verified digital object identifiers (DOI).", "Peer-Reviewed Output")}
+    ${pageHero("Scholarly Publications & Datasets", "7 Peer-Reviewed IEEE Conference Papers and 1 Published Research Dataset.", "Formal citation structure with verified digital object identifiers (DOI).", "Peer-Reviewed Output")}
 
     <section class="section" style="padding-top: 20px;">
       <div class="section-container">
         
         <div class="pub-toolbar">
           <div class="pub-summary">
-            Showing <strong>${confCount} Peer-Reviewed Conference Papers</strong> and <strong>${dataCount} Published Dataset</strong>
+            Showing <strong>${confCount} Peer-Reviewed IEEE Papers</strong> and <strong>${dataCount} Published Research Dataset</strong>
           </div>
           <a class="btn-primary" href="https://scholar.google.com/citations?user=J_8UeyoAAAAJ&hl=en" target="_blank" rel="noopener">
             <i class="fas fa-graduation-cap"></i> Google Scholar Profile
@@ -496,7 +549,11 @@ function renderProjects(d) {
             .map(
               (p) => `
             <article class="project-card">
-              ${p.image ? `<div class="project-img-wrap"><img src="${p.image}" alt="${esc(p.title)}" loading="lazy"></div>` : ""}
+              ${
+                p.image
+                  ? `<div class="project-img-wrap"><img src="${p.image}" alt="${esc(p.title)}" loading="lazy"></div>`
+                  : ""
+              }
               <div class="project-card-body">
                 <div class="project-category"><i class="${p.icon}"></i> ${esc(p.category)}</div>
                 <h2 class="project-title">${esc(p.title)}</h2>
@@ -625,12 +682,12 @@ function renderAchievements(d) {
 
 function renderExperiences(d) {
   $("#page-content").innerHTML = `
-    ${pageHero("Teaching & Leadership Experiences", "Sustained ICT instruction, academic mentoring, and student welfare governance.", "Demonstrated communication, team coordination, and institutional responsibility.", "Professional & Service Roles")}
+    ${pageHero("Teaching & Professional Experience", "Sustained ICT instruction, curriculum delivery, and academic mentoring.", "Demonstrated pedagogical communication and educational leadership.", "Teaching & Mentorship")}
 
     <section class="section" style="padding-top: 20px;">
       <div class="section-container">
         
-        <h2 class="section-title">Teaching &amp; <span class="accent-text">Mentorship Experience</span></h2>
+        <h2 class="section-title">ICT Instruction &amp; <span class="accent-text">Mentorship</span></h2>
         <div class="research-case-list">
           ${d.teaching
             .map(
@@ -640,7 +697,14 @@ function renderExperiences(d) {
                 <span class="research-case-period">${esc(t.period)}</span>
               </div>
               <h2 class="research-case-title">${esc(t.role)} — ${esc(t.organization)}</h2>
-              ${t.image ? `<div style="max-height: 260px; overflow: hidden; border-radius: 12px; margin-bottom: 14px;"><img src="${t.image}" alt="${esc(t.organization)}" style="width: 100%; height: 100%; object-fit: cover;"></div>` : ""}
+              ${
+                t.image || t.secondaryImage
+                  ? `<div class="media-frame-dual">
+                      ${t.image ? `<div class="media-frame"><img src="${t.image}" alt="${esc(t.organization)}"></div>` : ""}
+                      ${t.secondaryImage ? `<div class="media-frame"><img src="${t.secondaryImage}" alt="${esc(t.organization)} team"></div>` : ""}
+                    </div>`
+                  : ""
+              }
               <p class="research-case-summary">${esc(t.description)}</p>
               <div class="learning-box">
                 <span>Pedagogical &amp; Communication Growth</span>
@@ -655,29 +719,65 @@ function renderExperiences(d) {
             .join("")}
         </div>
 
-        <h2 class="section-title" style="margin-top: 50px;">Student Governance &amp; <span class="accent-text">Leadership</span></h2>
-        <div class="projects-grid">
+      </div>
+    </section>
+  `;
+}
+
+function renderExtracurricular(d) {
+  $("#page-content").innerHTML = `
+    ${pageHero("Extra-Curricular & Leadership", "Student governance, welfare presidency, youth empowerment, and club administration.", "Proven capability in organizational management, community service, and large-scale event coordination.", "Leadership & Governance")}
+
+    <section class="section" style="padding-top: 20px;">
+      <div class="section-container">
+        
+        <h2 class="section-title">Executive Governance &amp; <span class="accent-text">Leadership Roles</span></h2>
+        <div class="research-case-list">
           ${d.leadership
             .map(
               (l) => `
+            <article class="research-case-card">
+              <div class="research-case-head">
+                <span class="research-case-period">${esc(l.period)} · ${esc(l.role)}</span>
+              </div>
+              <h2 class="research-case-title">${esc(l.organization)}</h2>
+              ${
+                l.image || l.evidenceImage
+                  ? `<div class="media-frame-dual">
+                      ${l.image ? `<div class="media-frame"><img src="${l.image}" alt="${esc(l.organization)}"></div>` : ""}
+                      ${l.evidenceImage ? `<div class="media-frame"><img src="${l.evidenceImage}" alt="Supporting record for ${esc(l.organization)}"></div>` : ""}
+                    </div>`
+                  : ""
+              }
+              <p class="research-case-summary">${esc(l.description)}</p>
+              <div class="learning-box">
+                <span>Leadership Growth &amp; Community Impact</span>
+                <p>${esc(l.learning)}</p>
+              </div>
+              <div class="tag-list">
+                ${l.tags.map((tg) => `<span class="tag-item">${esc(tg)}</span>`).join("")}
+              </div>
+              ${
+                l.certificate
+                  ? `<div style="margin-top: 14px;"><a class="btn-primary" href="${l.certificate}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Recognition Certificate</a></div>`
+                  : ""
+              }
+            </article>
+          `
+            )
+            .join("")}
+        </div>
+
+        <h2 class="section-title" style="margin-top: 40px;">Additional Community &amp; <span class="accent-text">Campus Engagement</span></h2>
+        <div class="projects-grid">
+          ${d.additionalInvolvement
+            .map(
+              (inv) => `
             <article class="project-card">
-              ${l.image ? `<div class="project-img-wrap"><img src="${l.image}" alt="${esc(l.organization)}" loading="lazy"></div>` : ""}
+              ${inv.image ? `<div class="media-frame" style="margin-bottom: 0;"><img src="${inv.image}" alt="${esc(inv.title)}"></div>` : ""}
               <div class="project-card-body">
-                <div class="project-category"><i class="fas fa-user-shield"></i> ${esc(l.period)} · ${esc(l.role)}</div>
-                <h2 class="project-title">${esc(l.organization)}</h2>
-                <p class="project-summary">${esc(l.description)}</p>
-                <div class="learning-box">
-                  <span>Leadership Lesson</span>
-                  <p>${esc(l.learning)}</p>
-                </div>
-                <div class="tag-list">
-                  ${l.tags.map((tg) => `<span class="tag-item">${esc(tg)}</span>`).join("")}
-                </div>
-                ${
-                  l.certificate
-                    ? `<div style="margin-top: 12px;"><a class="btn-primary" style="font-size: 12px; padding: 6px 16px;" href="${l.certificate}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Certificate</a></div>`
-                    : ""
-                }
+                <h2 class="project-title" style="font-size: 17px;">${esc(inv.title)}</h2>
+                <p class="project-summary">${esc(inv.text)}</p>
               </div>
             </article>
           `
@@ -692,7 +792,7 @@ function renderExperiences(d) {
 
 function renderPresentations(d) {
   $("#page-content").innerHTML = `
-    ${pageHero("Presentations & Scientific Outreach", "Conference oral presentations, scientific discussions, and media appearances.", "Active research communication before international and national audiences.", "Scientific Outreach")}
+    ${pageHero("Presentations & Scientific Outreach", "Conference oral presentations, Japan Sakura research proposal, and media appearances.", "Active research communication before international and national audiences.", "Scientific Outreach")}
 
     <section class="section" style="padding-top: 20px;">
       <div class="section-container">
@@ -706,12 +806,19 @@ function renderPresentations(d) {
                 <span class="research-case-period">${esc(p.date)} · ${esc(p.type)}</span>
               </div>
               <h2 class="research-case-title">${esc(p.title)}</h2>
-              <p style="color: var(--primary-accent); font-weight: 600; font-size: 14.5px; margin-bottom: 10px;">${esc(p.context)}</p>
-              ${p.image ? `<div style="max-height: 280px; overflow: hidden; border-radius: 12px; margin-bottom: 14px;"><img src="${p.image}" alt="${esc(p.title)}" style="width: 100%; height: 100%; object-fit: cover;"></div>` : ""}
+              <p style="color: var(--primary-accent); font-weight: 700; font-size: 15px; margin-bottom: 10px;"><i class="fas fa-location-dot"></i> ${esc(p.context)}</p>
+              ${
+                p.image || p.secondaryImage
+                  ? `<div class="media-frame-dual">
+                      ${p.image ? `<div class="media-frame"><img src="${p.image}" alt="${esc(p.title)}"></div>` : ""}
+                      ${p.secondaryImage ? `<div class="media-frame"><img src="${p.secondaryImage}" alt="${esc(p.title)} 2"></div>` : ""}
+                    </div>`
+                  : ""
+              }
               <p class="research-case-summary">${esc(p.description)}</p>
               ${
                 p.evidence
-                  ? `<div style="margin-top: 14px;"><a class="btn-primary" href="${p.evidence}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Presentation Document</a></div>`
+                  ? `<div style="margin-top: 14px;"><a class="btn-primary" href="${p.evidence}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Official Document</a></div>`
                   : ""
               }
             </article>
@@ -787,6 +894,9 @@ function init() {
       break;
     case "experiences":
       renderExperiences(d);
+      break;
+    case "extracurricular":
+      renderExtracurricular(d);
       break;
     case "presentations":
       renderPresentations(d);
