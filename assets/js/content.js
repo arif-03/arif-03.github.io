@@ -139,6 +139,15 @@ export const portfolio = {
   ],
 
     publications: [
+      {
+      type: "Conference Paper",
+      year: "2026",
+      title: "A Hybrid YOLO-EfficientNet Framework for Fine-Grained Vegetable Recognition in Dense Multi-Object Images",
+      venue: "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence & Networking (QPAIN)",
+      authors: "A. Islam, S. K. Ray, S. A. Oishi et al.",
+      note: "First author",
+      doi: "https://doi.org/10.1109/QPAIN69676.2026.11545784"
+    },
     {
       type: "Conference Paper",
       year: "2026",
@@ -156,6 +165,14 @@ export const portfolio = {
       authors: "S. A. Oishi, A. Islam, M. A. Miya, M. H. Mohona, Ohidujjaman, M. S. Hosain",
       doi: "https://doi.org/10.1109/PECCII70991.2026.11662017"
     },
+      {
+      type: "Conference Paper",
+      year: "2024",
+      title: "Deep Learning Based Lung Image Segmentation Using XR-U-Net",
+      venue: "27th International Conference on Computer and Information Technology (ICCIT)",
+      authors: "S. K. Ray, A. Islam, M. C. Chanda et al.",
+      doi: "https://doi.org/10.1109/ICCIT64611.2024.11022346"
+    },
     {
       type: "Conference Paper",
       year: "2026",
@@ -164,15 +181,7 @@ export const portfolio = {
       authors: "K. Ahmad, M. C. Chanda, A. Islam, M. M. Khatun, S. R. Al Ahmed, M. S. Hosain",
       doi: "https://doi.org/10.1109/PECCII70991.2026.11661872"
     },
-    {
-      type: "Conference Paper",
-      year: "2026",
-      title: "A Hybrid YOLO-EfficientNet Framework for Fine-Grained Vegetable Recognition in Dense Multi-Object Images",
-      venue: "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence & Networking (QPAIN)",
-      authors: "A. Islam, S. K. Ray, S. A. Oishi et al.",
-      note: "First author",
-      doi: "https://doi.org/10.1109/QPAIN69676.2026.11545784"
-    },
+
     {
       type: "Conference Paper",
       year: "2025",
@@ -189,14 +198,7 @@ export const portfolio = {
       authors: "S. H. Turza, A. Mahdi, M. I. S. Shad, M. H. Kabir, A. Islam",
       doi: "https://doi.org/10.1109/ICCIT68739.2025.11491228"
     },
-    {
-      type: "Conference Paper",
-      year: "2024",
-      title: "Deep Learning Based Lung Image Segmentation Using XR-U-Net",
-      venue: "27th International Conference on Computer and Information Technology (ICCIT)",
-      authors: "S. K. Ray, A. Islam, M. C. Chanda et al.",
-      doi: "https://doi.org/10.1109/ICCIT64611.2024.11022346"
-    },
+    
     {
       type: "Dataset",
       year: "2026",
