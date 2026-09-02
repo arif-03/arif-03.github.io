@@ -56,7 +56,7 @@ export const portfolio = {
   ],
 
   stats: [
-    { value: "4", label: "Peer-reviewed conference papers" },
+    { value: "7", label: "Peer-reviewed conference papers" },
     { value: "1", label: "Published research dataset" },
     { value: "3.74/4.00", label: "CGPA through 7th semester" },
     { value: "Japan", label: "Sakura Science Exchange 2025" }
@@ -138,7 +138,32 @@ export const portfolio = {
     }
   ],
 
-  publications: [
+    publications: [
+    {
+      type: "Conference Paper",
+      year: "2026",
+      title: "GR-ACE Net: A Hybrid Graph-Attentional Framework with Global Relational Reasoning for Deepfake Forensics",
+      venue: "2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)",
+      authors: "A. Islam, S. A. Oishi, M. M. Hasan, M. Mamun, M. A. Hossain, M. H. Mohona, M. A. Miya, S. K. Ray",
+      note: "First author",
+      doi: "https://doi.org/10.1109/PECCII70991.2026.11661873"
+    },
+    {
+      type: "Conference Paper",
+      year: "2026",
+      title: "A Comparative Study of CNN, Transformer, and Recurrent Models for Deepfake Detection on Degraded Images",
+      venue: "2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)",
+      authors: "S. A. Oishi, A. Islam, M. A. Miya, M. H. Mohona, Ohidujjaman, M. S. Hosain",
+      doi: "https://doi.org/10.1109/PECCII70991.2026.11662017"
+    },
+    {
+      type: "Conference Paper",
+      year: "2026",
+      title: "Rice Nutrient Deficiency Detection Using Vision Transformer for Precision Agriculture",
+      venue: "2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)",
+      authors: "K. Ahmad, M. C. Chanda, A. Islam, M. M. Khatun, S. R. Al Ahmed, M. S. Hosain",
+      doi: "https://doi.org/10.1109/PECCII70991.2026.11661872"
+    },
     {
       type: "Conference Paper",
       year: "2026",
@@ -147,14 +172,6 @@ export const portfolio = {
       authors: "A. Islam, S. K. Ray, S. A. Oishi et al.",
       note: "First author",
       doi: "https://doi.org/10.1109/QPAIN69676.2026.11545784"
-    },
-    {
-      type: "Conference Paper",
-      year: "2024",
-      title: "Deep Learning Based Lung Image Segmentation Using XR-U-Net",
-      venue: "27th International Conference on Computer and Information Technology (ICCIT)",
-      authors: "S. K. Ray, A. Islam, M. C. Chanda et al.",
-      doi: "https://doi.org/10.1109/ICCIT64611.2024.11022346"
     },
     {
       type: "Conference Paper",
@@ -173,6 +190,14 @@ export const portfolio = {
       doi: "https://doi.org/10.1109/ICCIT68739.2025.11491228"
     },
     {
+      type: "Conference Paper",
+      year: "2024",
+      title: "Deep Learning Based Lung Image Segmentation Using XR-U-Net",
+      venue: "27th International Conference on Computer and Information Technology (ICCIT)",
+      authors: "S. K. Ray, A. Islam, M. C. Chanda et al.",
+      doi: "https://doi.org/10.1109/ICCIT64611.2024.11022346"
+    },
+    {
       type: "Dataset",
       year: "2026",
       title: "MangoFruitBD: A Bounding-Box Annotated Image Dataset for Detecting Healthy and Diseased Mango Fruits in Bangladeshi Orchards",
@@ -182,7 +207,6 @@ export const portfolio = {
       doi: "https://doi.org/10.17632/bhrz29mkmr.1"
     }
   ],
-
   projects: [
     {
       title: "PIC16F877A Relay-Controlled Digital Timer",
