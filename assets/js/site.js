@@ -490,51 +490,188 @@ function renderSakura(d) {
   const s = d.sakura;
 
   $("#page-content").innerHTML = `
-    ${pageHero("Sakura Science Exchange Program", s.subtitle, s.summary, "International Research Exchange")}
+    ${pageHero(
+      "Sakura Science Exchange Program",
+      s.subtitle,
+      s.summary,
+      "JST International Research Fellowship"
+    )}
+
+    <!-- STICKY DAY NAVIGATION -->
+    <div class="sakura-nav-bar">
+      <div class="section-container">
+        <div class="sakura-nav-scroll">
+          <a class="sakura-nav-pill active" href="#sakura-overview"><i class="fas fa-compass"></i> Overview</a>
+          <a class="sakura-nav-pill" href="#day-1"><i class="fas fa-plane-arrival"></i> Day 1: Welcome</a>
+          <a class="sakura-nav-pill" href="#day-2"><i class="fas fa-robot"></i> Day 2: Agri-Robotics</a>
+          <a class="sakura-nav-pill" href="#day-3"><i class="fas fa-wave-square"></i> Day 3: Communications</a>
+          <a class="sakura-nav-pill featured-pill" href="#day-4"><i class="fas fa-chalkboard-user"></i> Day 4: Research Defense</a>
+          <a class="sakura-nav-pill" href="#day-5"><i class="fas fa-cube"></i> Day 5: 3D Spatial Lab</a>
+          <a class="sakura-nav-pill featured-pill" href="#day-6"><i class="fas fa-mountain-sun"></i> Day 6: Mount Fuji</a>
+          <a class="sakura-nav-pill" href="#day-7"><i class="fas fa-award"></i> Day 7: Ceremony</a>
+          <a class="sakura-nav-pill" href="#sakura-media"><i class="fas fa-newspaper"></i> Media &amp; Reflections</a>
+        </div>
+      </div>
+    </div>
 
     <section class="section" style="padding-top: 20px;">
       <div class="section-container">
         
-        <div class="home-hero-card" style="margin-bottom: 30px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-            <div>
-              <span class="home-badge"><i class="fas fa-award"></i> JST INTERNATIONAL FELLOWSHIP</span>
-              <h2 style="font-size: 24px; font-weight: 800; color: #0b1329;">University of Yamanashi, Japan</h2>
-              <p style="color: var(--text-dim); font-weight: 600; font-size: 14.5px;">Supported by Japan Science and Technology Agency (JST)</p>
-            </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-              <a class="btn-primary" href="${s.certificate}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Official Certificate</a>
-              <a class="btn-secondary" href="${s.membership}" target="_blank" rel="noopener"><i class="fas fa-id-card"></i> Club Membership</a>
-            </div>
-          </div>
-          
-          <div style="margin-top: 24px;" class="about-hero-text">
-            ${s.narrative.map((p) => `<p style="margin-bottom: 14px; font-size: 15.5px; line-height: 1.7;">${esc(p)}</p>`).join("")}
-          </div>
-        </div>
-
-        <h2 class="section-title">Visual Record &amp; <span class="accent-text">Laboratory Moments</span></h2>
-        <div class="gallery-grid">
-          ${s.moments
+        <!-- PROGRAM STATS ROW -->
+        <div class="stats-grid" style="margin-top: 0; margin-bottom: 30px;">
+          ${s.stats
             .map(
-              (m) => `
-            <div class="gallery-card">
-              <div class="gallery-img-wrap">
-                <img src="${m.image}" alt="${esc(m.title)}" loading="lazy">
-              </div>
-              <div class="gallery-caption">
-                <span class="gallery-category">Sakura Science · Japan</span>
-                <div class="gallery-title">${esc(m.title)}</div>
-              </div>
+              (st) => `
+            <div class="stat-card">
+              <div class="stat-value" style="font-size: 26px;">${esc(st.value)}</div>
+              <div class="stat-label">${esc(st.label)}</div>
             </div>
           `
             )
             .join("")}
         </div>
 
+        <!-- OVERVIEW CARD -->
+        <article class="research-case-card" id="sakura-overview" style="margin-bottom: 36px;">
+          <div class="research-case-head">
+            <span class="home-badge"><i class="fas fa-award"></i> ${esc(s.fellowship)}</span>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a class="btn-primary" style="font-size: 12px; padding: 6px 16px;" href="${s.certificate}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Official Certificate</a>
+              <a class="btn-secondary" style="font-size: 12px; padding: 6px 16px;" href="${s.membership}" target="_blank" rel="noopener"><i class="fas fa-id-card"></i> Club Membership</a>
+            </div>
+          </div>
+
+          <h2 class="research-case-title" style="font-size: 26px;">${esc(s.overview.headline)}</h2>
+
+          <div class="about-hero-text">
+            ${s.overview.paragraphs.map((p) => `<p style="margin-bottom: 12px;">${esc(p)}</p>`).join("")}
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px;">
+            ${s.overview.facts
+              .map(
+                (f) => `
+              <div class="fact-box">
+                <span class="fact-title">${esc(f.title)}</span>
+                <p class="fact-desc">${esc(f.desc)}</p>
+              </div>
+            `
+              )
+              .join("")}
+          </div>
+        </article>
+
+        <!-- DAY-BY-DAY STORY TIMELINE -->
+        <h2 class="section-title">Seven-Day Academic &amp; <span class="accent-text">Research Timeline</span></h2>
+        <p class="section-subtitle">Chronological record of laboratory sessions, research presentations, technological demonstrations, and cultural exchange.</p>
+
+        <div class="sakura-story-list">
+          ${s.days
+            .map(
+              (d) => `
+            <article class="sakura-day-card ${d.featured ? "featured-day-card" : ""}" id="${esc(d.id)}">
+              <div class="sakura-day-header">
+                <div class="day-chip-wrap">
+                  <span class="day-chip">${esc(d.dayNumber)}</span>
+                  <span class="day-date">${esc(d.date)}</span>
+                </div>
+                ${d.featured ? `<span class="pub-tag first-author"><i class="fas fa-star"></i> Personal Highlight</span>` : ""}
+              </div>
+
+              <h2 class="sakura-day-title">${esc(d.title)}</h2>
+              <p class="sakura-day-subtitle">${esc(d.subtitle)}</p>
+
+              ${
+                d.image || d.secondaryImage
+                  ? `<div class="media-frame-dual" style="margin: 16px 0;">
+                      ${d.image ? `<div class="media-frame" style="margin-bottom: 0;"><img src="${d.image}" alt="${esc(d.title)}" loading="lazy"></div>` : ""}
+                      ${d.secondaryImage ? `<div class="media-frame" style="margin-bottom: 0;"><img src="${d.secondaryImage}" alt="${esc(d.title)} secondary" loading="lazy"></div>` : ""}
+                    </div>`
+                  : ""
+              }
+
+              <div class="about-hero-text">
+                ${d.story.map((p) => `<p style="margin-bottom: 12px;">${esc(p)}</p>`).join("")}
+              </div>
+
+              <div class="learning-box">
+                <span><i class="fas fa-lightbulb"></i> Key Technical Takeaway &amp; Academic Learning</span>
+                <p>${esc(d.takeaway)}</p>
+              </div>
+
+              <div class="tag-list">
+                ${d.tags.map((t) => `<span class="tag-item">${esc(t)}</span>`).join("")}
+              </div>
+            </article>
+          `
+            )
+            .join("")}
+        </div>
+
+        <!-- MEDIA RECOGNITION -->
+        <h2 class="section-title" id="sakura-media" style="margin-top: 50px;">National Media &amp; <span class="accent-text">Public Recognition</span></h2>
+        <article class="research-case-card" style="margin-bottom: 36px;">
+          <h2 class="research-case-title" style="font-size: 22px;">${esc(s.media.title)}</h2>
+          <p style="color: var(--primary-accent); font-weight: 700; margin-bottom: 14px;">${esc(s.media.subtitle)}</p>
+          <div class="media-frame">
+            <img src="${s.media.image}" alt="${esc(s.media.title)}" style="max-height: 420px;" loading="lazy">
+          </div>
+          <p class="research-case-summary" style="margin-top: 14px;">${esc(s.media.description)}</p>
+        </article>
+
+        <!-- REFLECTIONS GRID -->
+        <h2 class="section-title" style="margin-top: 40px;">Core Reflections &amp; <span class="accent-text">Long-Term Academic Impact</span></h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 30px;">
+          ${s.reflections
+            .map(
+              (r) => `
+            <div class="focus-card">
+              <span class="focus-mark"><i class="fas fa-quote-left"></i></span>
+              <h3 style="font-size: 18px; margin-bottom: 8px;">${esc(r.title)}</h3>
+              <p style="font-size: 14.5px; color: var(--text-muted); line-height: 1.65;">${esc(r.text)}</p>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+
+        <!-- VERIFIED CREDENTIALS CALLOUT -->
+        <div class="home-hero-card" style="margin-top: 40px; text-align: center; padding: 36px;">
+          <span class="home-badge" style="margin: 0 auto 12px auto;"><i class="fas fa-stamp"></i> VERIFIED CREDENTIALS</span>
+          <h2 style="font-size: 24px; font-weight: 800; color: #0b1329; margin-bottom: 8px;">Official Sakura Science Program Documentation</h2>
+          <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto 20px auto; font-size: 15px;">
+            The Certificate of Completion and permanent Sakura Science Club membership letter verify my competitive selection and successful completion of the academic exchange in Japan.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+            <a class="btn-primary" href="${s.certificate}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Download Official Certificate (PDF)</a>
+            <a class="btn-secondary" href="${s.membership}" target="_blank" rel="noopener"><i class="fas fa-id-card"></i> View Membership Letter (PDF)</a>
+          </div>
+        </div>
+
       </div>
     </section>
   `;
+
+  // Highlight active pill on scroll
+  const navPills = $$(".sakura-nav-pill");
+  const dayCards = $$(".sakura-day-card, #sakura-overview, #sakura-media");
+  
+  window.addEventListener("scroll", () => {
+    let current = "";
+    dayCards.forEach((card) => {
+      const cardTop = card.offsetTop - 140;
+      if (window.scrollY >= cardTop) {
+        current = card.getAttribute("id");
+      }
+    });
+
+    navPills.forEach((pill) => {
+      pill.classList.remove("active");
+      if (pill.getAttribute("href") === `#${current}`) {
+        pill.classList.add("active");
+      }
+    });
+  });
 }
 
 function renderProjects(d) {

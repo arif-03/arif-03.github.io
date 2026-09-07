@@ -613,7 +613,7 @@ export const portfolio = {
       title: "Deep Learning Architectures for Agricultural & Vision AI Applications",
       context: "Sakura Science Exchange Program · University of Yamanashi, Japan",
       description: "Formulated, presented, and defended an applied deep learning research proposal before Japanese professors and research scholars during the academic exchange in Yamanashi.",
-      image: "assets/images/sakura-deep-learning-presentation.webp",
+      image: "assets/images/sakura-presentation-ariful.jpg",
       secondaryImage: "assets/images/sakura-deep-learning-presentation-2.webp",
       evidence: "assets/documents/certificates/sakura-science-exchange-certificate.pdf"
     },
@@ -672,26 +672,156 @@ export const portfolio = {
 
   sakura: {
     title: "Sakura Science Exchange Program 2025",
-    subtitle: "University of Yamanashi, Japan · 25 Oct–2 Nov 2025",
-    summary: "Competitively selected as one of only seven undergraduate representatives from Pabna University of Science and Technology for an intensive international academic exchange in Japan, supported by the Japan Science and Technology Agency (JST).",
+    subtitle: "University of Yamanashi, Japan · 25 October – 2 November 2025",
+    summary: "Competitively selected as one of seven undergraduate representatives from Pabna University of Science and Technology (PUST) for an intensive international academic exchange in Japan, funded and supported by the Japan Science and Technology Agency (JST).",
+    fellowship: "Japan Science and Technology Agency (JST) International Fellowship",
     certificate: "assets/documents/certificates/sakura-science-exchange-certificate.pdf",
     membership: "assets/documents/certificates/sakura-science-club-membership-letter.pdf",
-    narrative: [
-      "The Sakura Science Exchange Program at the University of Yamanashi was a defining international milestone in my academic development. Immersed in Japanese research culture, I engaged in cutting-edge laboratory sessions covering deep learning, agricultural robotics, automated vineyard cultivation, underwater acoustic communication, and 3D computer vision.",
-      "Beyond laboratory tours, the program required active research ideation. I developed and presented a deep-learning research proposal to Japanese professors, defending methodology and architectural choices.",
-      "Experiencing high-precision laboratories and international peer collaboration deepened my commitment to pursuing graduate research at the global forefront of computer vision and intelligent cyber-physical systems."
+    stats: [
+      { value: "7 Days", label: "Intensive Academic Exchange" },
+      { value: "5 Labs", label: "Advanced Engineering Facilities" },
+      { value: "Oral Defense", label: "Deep Learning Research Proposal" },
+      { value: "JST Fellow", label: "Sakura Science Club Member" }
     ],
-    moments: [
-      { title: "Warm welcome at the University of Yamanashi", image: "assets/images/sakura-welcome-university-yamanashi.webp" },
-      { title: "PUST Delegation at University of Yamanashi", image: "assets/images/sakura-pust-team-yamanashi.webp" },
-      { title: "Delivering deep learning research presentation", image: "assets/images/sakura-deep-learning-presentation.webp" },
-      { title: "Interactive deep learning research discussion", image: "assets/images/sakura-deep-learning-presentation-2.webp" },
-      { title: "Agricultural robotics & smart vineyard automation", image: "assets/images/sakura-agricultural-robotics.webp" },
-      { title: "Underwater acoustic communication laboratory", image: "assets/images/sakura-underwater-communication-lab.webp" },
-      { title: "Optical & wireless communications laboratory session", image: "assets/images/sakura-communication-lab.webp" },
-      { title: "3D animation & spatial graphics session", image: "assets/images/sakura-3d-animation-session.webp" },
-      { title: "Mount Fuji cultural and scientific excursion", image: "assets/images/sakura-mount-fuji.webp" },
-      { title: "National daily newspaper coverage of the delegation", image: "assets/images/sakura-news-coverage.webp" }
+    overview: {
+      headline: "A Defining International Research Milestone in Japan",
+      paragraphs: [
+        "In October 2025, I had the extraordinary honor of representing Pabna University of Science and Technology (PUST) in Japan under the prestigious Sakura Science Exchange Program, supported by the Japan Science and Technology Agency (JST). Hosted at the University of Yamanashi in Kofu, Yamanashi Prefecture, the program brought our delegation directly into Japan's world-renowned research ecosystem.",
+        "Over the course of seven intensive days, the exchange bridged theoretical machine learning with advanced cyber-physical implementations—spanning agricultural robotics, underwater acoustic communications, optical networking, 3D spatial computing, and deep learning systems. Beyond laboratory tours, the program challenged us to formulate, present, and defend our own research vision before international faculty.",
+        "This experience fundamentally transformed my perspective as an aspiring computer vision researcher, instilling in me the precision, collaborative ethos, and societal commitment that define world-class scientific inquiry."
+      ],
+      facts: [
+        { title: "Host Institution", desc: "University of Yamanashi, Kofu, Japan" },
+        { title: "Funding Body", desc: "Japan Science and Technology Agency (JST)" },
+        { title: "Delegation Size", desc: "7 Selected Undergraduate Researchers from PUST" },
+        { title: "Key Research Focus", desc: "Deep Learning, Robotics, Optical & Acoustic Communications" }
+      ]
+    },
+    days: [
+      {
+        id: "day-1",
+        dayNumber: "Day 1",
+        date: "26 October 2025",
+        title: "Arrival in Japan & Warm Welcome at the University of Yamanashi",
+        subtitle: "Stepping into Kofu, Yamanashi Prefecture & Initial Academic Orientation",
+        image: "assets/images/sakura-welcome-university-yamanashi.webp",
+        story: [
+          "Our journey commenced with arrival in Tokyo and a scenic train transit westward toward Kofu, surrounded by the picturesque mountains of Yamanashi Prefecture. At the University of Yamanashi, our delegation was received with remarkable warmth by the faculty, program coordinators, and international office leadership.",
+          "During the formal opening orientation, we were introduced to the university's multidisciplinary engineering departments, laboratory safety protocols, and the collaborative philosophy underpinning Japanese research culture. The mutual respect and meticulous organization set a high academic standard for the days ahead."
+        ],
+        takeaway: "Gained immediate appreciation for the structure, discipline, and intentionality that characterize top Japanese research institutions.",
+        tags: ["University of Yamanashi", "Orientation", "International Exchange", "Kofu"]
+      },
+      {
+        id: "day-2",
+        dayNumber: "Day 2",
+        date: "27 October 2025",
+        title: "Smart Agriculture & Robotic Vineyard Automation Laboratory",
+        subtitle: "Field Robotics, Sensor Fusion, and Vision-Guided Crop Management",
+        image: "assets/images/sakura-agricultural-robotics.webp",
+        story: [
+          "Yamanashi is world-famous for its fruit cultivation and winemaking heritage. On Day 2, we visited the Agricultural Robotics and Automation Research Facility, where researchers demonstrated autonomous mobile robots engineered for vineyard maintenance, automated pruning, and fruit health surveillance.",
+          "Seeing LiDAR, multispectral cameras, and embedded computing systems working collaboratively in real orchard conditions resonated deeply with my undergraduate thesis research on MangoFruitBD. We discussed the challenges of real-time edge processing, occlusion in dense canopies, and robust fruit detection under dynamic natural lighting."
+        ],
+        takeaway: "Reinforced that computer vision models achieve true societal value when seamlessly integrated with robotic hardware and real-field agricultural constraints.",
+        tags: ["Agricultural Robotics", "Smart Farming", "Edge AI", "Sensor Fusion"]
+      },
+      {
+        id: "day-3",
+        dayNumber: "Day 3",
+        date: "28 October 2025",
+        title: "Advanced Underwater Acoustics & Optical Communication Laboratories",
+        subtitle: "Exploring Signal Transmission in Extreme Physical Environments",
+        image: "assets/images/sakura-underwater-communication-lab.webp",
+        secondaryImage: "assets/images/sakura-communication-lab.webp",
+        story: [
+          "Day 3 was dedicated to advanced communication systems. We explored high-precision laboratory testbeds for underwater acoustic communications, where researchers model signal attenuation, multipath distortion, and Doppler shifts in aquatic environments.",
+          "We also visited the optical and wireless networking facilities, inspecting free-space optical transmission rigs and high-frequency communication prototypes. Engaging directly with the graduate researchers allowed us to compare signal processing pipelines with digital image processing architectures."
+        ],
+        takeaway: "Deepened my foundational grasp of signal modeling, physical-layer noise suppression, and sensor telemetry across challenging environments.",
+        tags: ["Underwater Acoustics", "Optical Communications", "Signal Processing", "Telemetry"]
+      },
+      {
+        id: "day-4",
+        dayNumber: "Day 4",
+        date: "29 October 2025",
+        title: "Deep Learning Research Proposal Presentation & Academic Defense",
+        subtitle: "Delivering Oral Proposal on Real-World Agricultural AI Applications",
+        image: "assets/images/sakura-presentation-ariful.jpg",
+        secondaryImage: "assets/images/sakura-deep-learning-presentation-2.webp",
+        featured: true,
+        story: [
+          "Day 4 was the academic pinnacle of the exchange program. I took the stage before Japanese faculty, visiting scholars, and peers to deliver an oral research presentation titled 'Real-World Deep Learning Applications: Orchard Management, Quality Grading, Export Quality & Post-Harvest Monitoring'.",
+          "I presented our end-to-end framework: from field RGB data acquisition in Bangladeshi orchards and bounding-box dataset engineering to YOLOv8/v11 detection models and severity quantification. I addressed questions on model generalization across diverse cultivars, computational latency for on-device deployment, and export grading automation.",
+          "The constructive feedback from Japanese professors and the ensuing technical dialogue validated our methodology while illuminating advanced avenues for multimodal sensor fusion."
+        ],
+        takeaway: "Successfully defended my research methodology in an international forum, sharpening my scholarly communication and technical agility under faculty scrutiny.",
+        tags: ["Oral Presentation", "Research Proposal", "Computer Vision", "Agricultural AI", "Scholarly Defense"]
+      },
+      {
+        id: "day-5",
+        dayNumber: "Day 5",
+        date: "30 October 2025",
+        title: "3D Animation, Spatial Computing & Graphics Laboratory",
+        subtitle: "Volumetric Rendering, Point Clouds, and Spatial Human-Computer Interaction",
+        image: "assets/images/sakura-3d-animation-session.webp",
+        story: [
+          "On Day 5, we immersed ourselves in the 3D Animation and Spatial Computing Laboratory. Faculty demonstrated cutting-edge techniques in volumetric point-cloud reconstruction, real-time spatial rendering, and immersive graphics pipelines.",
+          "We explored how 3D spatial models complement 2D computer vision—especially in depth estimation, robotic manipulation, and surgical simulation. The session sparked ideas on incorporating 3D geometric reasoning into my future vision frameworks."
+        ],
+        takeaway: "Realized the powerful synergy between 2D deep learning representations and 3D geometric scene understanding.",
+        tags: ["3D Animation", "Spatial Computing", "Graphics", "Volumetric Vision"]
+      },
+      {
+        id: "day-6",
+        dayNumber: "Day 6",
+        date: "31 October 2025",
+        title: "Mount Fuji Scientific & Cultural Excursion",
+        subtitle: "Experiencing Japan's Natural Heritage, Geography, and Environmental Harmony",
+        image: "assets/images/sakura-mount-fuji-ariful.jpg",
+        secondaryImage: "assets/images/sakura-cultural-visit.webp",
+        featured: true,
+        story: [
+          "Beyond laboratory walls, scientific insight thrives through understanding a nation's geography and environmental harmony. On Day 6, our delegation embarked on a cultural and scientific excursion to the iconic Mount Fuji and the Fuji Five Lakes region (Lake Kawaguchi).",
+          "Standing before the majestic peak of Mount Fuji on a clear autumn morning was an unforgettable, humbling experience. Observing how Japan balances ultra-advanced technological infrastructure with pristine ecological preservation offered profound inspiration for sustainable, technology-driven societal development."
+        ],
+        takeaway: "Gained lasting inspiration from Japan's harmonious integration of cutting-edge technology with environmental stewardship and cultural reverence.",
+        tags: ["Mount Fuji", "Lake Kawaguchi", "Cultural Heritage", "Yamanashi", "Scientific Excursion"]
+      },
+      {
+        id: "day-7",
+        dayNumber: "Day 7",
+        date: "1 November 2025",
+        title: "Closing Ceremony & Sakura Science Club Induction",
+        subtitle: "Receiving Official JST Credentials & Lifetime Alumni Membership",
+        image: "assets/images/sakura-pust-team-yamanashi.webp",
+        story: [
+          "The program concluded with a formal Closing and Certificate Awarding Ceremony at the University of Yamanashi. Each delegate received the official Certificate of Completion issued jointly by the University of Yamanashi and the Japan Science and Technology Agency (JST).",
+          "We were officially inducted as lifetime members of the Sakura Science Club (SSC), connecting us to a global network of international researchers, scientists, and alumni. In our farewell address, we expressed deep gratitude to the professors and organizers who made this transformative exchange possible."
+        ],
+        takeaway: "Earned verified international fellowship credentials and established lasting collaborative ties with Japanese academia.",
+        tags: ["Closing Ceremony", "JST Certificate", "Sakura Science Club", "PUST Delegation"]
+      }
+    ],
+    media: {
+      title: "National Newspaper & Media Recognition",
+      subtitle: "Delegation Achievement Featured in Leading National Dailies",
+      image: "assets/images/sakura-news-coverage.webp",
+      description: "Our selection and successful representation at the University of Yamanashi were widely celebrated and covered by leading Bangladeshi national daily newspapers, highlighting PUST's growing international research footprint."
+    },
+    reflections: [
+      {
+        title: "Academic Growth & Precision",
+        text: "Immersing in Japanese laboratories taught me that groundbreaking AI research is built on uncompromising attention to experimental rigor, data curation discipline, and methodological transparency."
+      },
+      {
+        title: "Global Collaboration Mindset",
+        text: "Engaging with international scholars dismantled geographical barriers, affirming that local agricultural and forensic challenges can be solved using globally competitive computer vision architectures."
+      },
+      {
+        title: "Commitment to Graduate Research",
+        text: "The exchange fortified my resolve to pursue graduate studies (M.Sc. / Ph.D.) in Computer Vision and Deep Learning, aiming to contribute impactful, cyber-physical AI systems for global benefit."
+      }
     ]
   },
 
@@ -757,13 +887,13 @@ export const portfolio = {
   gallery: [
     { category: "Sakura Science", title: "Warm welcome at the University of Yamanashi", image: "assets/images/sakura-welcome-university-yamanashi.webp" },
     { category: "Sakura Science", title: "PUST delegation at the University of Yamanashi", image: "assets/images/sakura-pust-team-yamanashi.webp" },
-    { category: "Sakura Science", title: "Presenting deep-learning research proposal in Japan", image: "assets/images/sakura-deep-learning-presentation.webp" },
+    { category: "Sakura Science", title: "Presenting deep-learning research proposal in Japan", image: "assets/images/sakura-presentation-ariful.jpg" },
     { category: "Sakura Science", title: "Discussion session on deep learning models", image: "assets/images/sakura-deep-learning-presentation-2.webp" },
     { category: "Sakura Science", title: "Underwater communications laboratory demonstration", image: "assets/images/sakura-underwater-communication-lab.webp" },
     { category: "Sakura Science", title: "Optical communication laboratory visit", image: "assets/images/sakura-communication-lab.webp" },
     { category: "Sakura Science", title: "Agricultural robotics and automated grape vineyard", image: "assets/images/sakura-agricultural-robotics.webp" },
     { category: "Sakura Science", title: "3D animation project session at Yamanashi", image: "assets/images/sakura-3d-animation-session.webp" },
-    { category: "Sakura Science", title: "At Mount Fuji during scientific excursion", image: "assets/images/sakura-mount-fuji.webp" },
+    { category: "Sakura Science", title: "Personal excursion record at Mount Fuji (Lake Kawaguchi)", image: "assets/images/sakura-mount-fuji-ariful.jpg" },
     { category: "Sakura Science", title: "Program cultural excursion in Yamanashi prefecture", image: "assets/images/sakura-cultural-visit.webp" },
     { category: "Sakura Science", title: "National daily newspaper feature on Sakura delegation", image: "assets/images/sakura-news-coverage.webp" },
     { category: "Research", title: "Presenting GR-ACE Net first-author paper at IEEE PECCII 2026", image: "assets/images/grace-net-peccii-presentation.webp" },
