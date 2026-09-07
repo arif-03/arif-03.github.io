@@ -281,15 +281,19 @@ export const portfolio = {
   ],
 
   coursework: [
+    "Data Structure and Algorithm",
+    "Object Oriented Programming",
     "Artificial Intelligence and Robotics",
-    "Neural Networks & Deep Learning",
+    "Neural Networks",
     "Natural Language Processing",
+    "Bio-medical Engineering",
     "Digital Image and Speech Processing",
     "Digital Signal Processing",
     "Database Management Systems",
-    "Web Programming & Software Engineering",
+    "Web Programming",
     "Software Analysis and System Testing",
-    "Wireless & Optical Communications",
+    "Data Communications",
+    "Wireless Communications",
     "Computer Architecture and Microcontroller Design"
   ],
 
