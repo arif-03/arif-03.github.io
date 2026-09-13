@@ -56,6 +56,10 @@ function renderHeader(activePage) {
         </button>
       </div>
 
+      <a class="nav-cv-btn" href="assets/documents/Ariful-Islam-CV.pdf" download="Ariful_Islam_CV.pdf" target="_blank" rel="noopener" aria-label="Download Full CV">
+        <i class="fas fa-file-arrow-down"></i> <span>Download CV</span>
+      </a>
+
       <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -109,6 +113,7 @@ function renderSocialSidebar() {
     <a href="https://scholar.google.com/citations?user=J_8UeyoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
     <a href="mailto:ariful.210637@s.pust.ac.bd" aria-label="Email"><i class="fas fa-envelope"></i></a>
     <a href="https://codeforces.com/profile/Arif.03" target="_blank" rel="noopener noreferrer" aria-label="Codeforces"><i class="fas fa-code"></i></a>
+    <a href="assets/documents/Ariful-Islam-CV.pdf" download="Ariful_Islam_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download CV" title="Download Full CV (PDF)"><i class="fas fa-file-pdf"></i></a>
   `;
 }
 
@@ -134,6 +139,7 @@ function renderFooter() {
           <a href="extracurricular.html">Extra-Curricular</a>
           <a href="presentations.html">Presentations</a>
           <a href="gallery.html">Gallery</a>
+          <a href="assets/documents/Ariful-Islam-CV.pdf" download="Ariful_Islam_CV.pdf" target="_blank" rel="noopener" style="color: var(--primary-accent); font-weight: 700;"><i class="fas fa-file-arrow-down"></i> Download CV</a>
         </div>
         <p class="footer-copy">© 2026 Ariful Islam. All rights reserved · Department of Information and Communication Engineering, PUST</p>
       </div>
@@ -198,7 +204,8 @@ function renderHome(d) {
                 ${p.about.map((paragraph) => `<p style="margin-top: 12px;">${esc(paragraph)}</p>`).join("")}
               </div>
               <div class="hero-cta-buttons">
-                <a class="btn-primary" href="mailto:${p.email}"><i class="fas fa-envelope"></i> Contact Me</a>
+                <a class="btn-primary" href="assets/documents/Ariful-Islam-CV.pdf" download="Ariful_Islam_CV.pdf" target="_blank" rel="noopener"><i class="fas fa-file-arrow-down"></i> Download CV</a>
+                <a class="btn-secondary" href="mailto:${p.email}"><i class="fas fa-envelope"></i> Contact Me</a>
                 <a class="btn-secondary" href="publications.html"><i class="fas fa-book-open"></i> Publications (8)</a>
                 <a class="btn-secondary" href="sakura.html"><i class="fas fa-globe-asia"></i> Sakura Science Record</a>
                 <a class="btn-secondary" href="education.html"><i class="fas fa-graduation-cap"></i> Academic Credentials</a>
@@ -299,6 +306,17 @@ function renderEducation(d) {
               <p style="color: var(--text-muted); max-width: 700px; font-size: 14.5px; margin-top: 6px;">Awarded on the basis of board merit results in Higher Secondary Certificate examinations.</p>
             </div>
             <a class="btn-primary" href="assets/documents/certificates/dbbl-scholarship-letter.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Official Letter</a>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px;" class="home-hero-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+              <span class="home-badge" style="margin-bottom: 8px;"><i class="fas fa-file-pdf"></i> CURRICULUM VITAE</span>
+              <h3 style="font-size: 20px; font-weight: 800; color: #0b1329;">Full Academic Curriculum Vitae (CV)</h3>
+              <p style="color: var(--text-muted); max-width: 700px; font-size: 14.5px; margin-top: 6px;">Comprehensive academic CV with detailed publication records, research projects, education milestones, technical competencies, and leadership honors.</p>
+            </div>
+            <a class="btn-primary" href="assets/documents/Ariful-Islam-CV.pdf" download="Ariful_Islam_CV.pdf" target="_blank" rel="noopener"><i class="fas fa-file-arrow-down"></i> Download Full CV</a>
           </div>
         </div>
 

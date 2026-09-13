@@ -337,6 +337,37 @@ img {
   border-color: #0088cc;
 }
 
+.nav-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #0088cc, #0066cc);
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(0, 136, 204, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 136, 204, 0.25);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-cv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 136, 204, 0.45);
+  background: linear-gradient(135deg, #0099e6, #0077e6);
+  color: #ffffff !important;
+}
+
+.nav-cv-btn i {
+  font-size: 13px;
+}
+
 .nav-toggle {
   display: none;
   background: transparent;
@@ -1865,6 +1896,12 @@ img {
   }
   .home-hero-card {
     padding: 24px 18px;
+  }
+  .nav-cv-btn span {
+    display: none;
+  }
+  .nav-cv-btn {
+    padding: 6px 12px;
   }
   .portal-grid {
     grid-template-columns: 1fr;

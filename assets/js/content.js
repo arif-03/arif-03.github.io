@@ -10,6 +10,7 @@ export const portfolio = {
     affiliation: "Department of Information and Communication Engineering, Pabna University of Science and Technology, Pabna, Bangladesh",
     location: "Bangladesh",
     email: "ariful.ice.pust@gmail.com",
+    cv: "assets/documents/Ariful-Islam-CV.pdf",
     portrait: "assets/images/profile-ariful-islam.webp",
     headline: "Engineering practical AI for agriculture, healthcare and trustworthy digital media.",
     status: "Final B.Sc. examination completed; final result pending.",
