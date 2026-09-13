@@ -36,6 +36,25 @@ export const portfolio = {
     { value: "Japan", label: "Sakura Science Exchange 2025" }
   ],
 
+  languages: [
+    {
+      name: "Bangla",
+      nativeName: "বাংলা",
+      proficiency: "Native Language",
+      type: "native",
+      icon: "fas fa-language",
+      description: "Native language and mother tongue. Complete fluency in spoken, written, and academic communication."
+    },
+    {
+      name: "English",
+      nativeName: "English",
+      proficiency: "Medium of Instruction (MOI)",
+      type: "moi",
+      icon: "fas fa-graduation-cap",
+      description: "Official Medium of Instruction (MOI) throughout 4-year B.Sc. Engineering degree at Pabna University of Science and Technology (PUST); proficient in scholarly research writing, 7 peer-reviewed IEEE conference publications, international oral defenses, and academic collaboration."
+    }
+  ],
+
   portalSections: [
     { icon: "fas fa-graduation-cap", title: "Education", desc: "B.Sc. in ICE at PUST, academic milestones, undergraduate thesis and coursework.", href: "education.html" },
     { icon: "fas fa-microscope", title: "Research", desc: "Core research focus, MangoFruitBD dataset creation, deepfake forensics, and technical toolkit.", href: "research.html" },
@@ -261,7 +280,8 @@ export const portfolio = {
       place: "Pabna University of Science and Technology (PUST), Bangladesh",
       grade: "CGPA 3.74/4.00 through 7th semester",
       status: "Final 8th-semester examination completed; final result pending.",
-      description: "Comprehensive curriculum covering deep learning, image processing, signal processing, wireless communications, programming, microcontrollers, and database engineering. Maintained top-tier academic standing throughout.",
+      mediumOfInstruction: "English (100% Medium of Instruction)",
+      description: "Comprehensive curriculum covering deep learning, image processing, signal processing, wireless communications, programming, microcontrollers, and database engineering. Maintained top-tier academic standing throughout. Medium of Instruction: English.",
       thesis: "Development and Evaluation of a YOLO-Based Mango Fruit Health Detection Framework Using the MangoFruitBD Dataset"
     },
     {

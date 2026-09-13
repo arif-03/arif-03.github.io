@@ -191,6 +191,10 @@ function renderHome(d) {
               <p class="home-dept">
                 <i class="fas fa-university"></i> ${esc(p.affiliation)}
               </p>
+              <div class="hero-lang-chips">
+                <span class="hero-lang-chip"><i class="fas fa-comments"></i> <strong>Bangla:</strong> Native Language</span>
+                <span class="hero-lang-chip"><i class="fas fa-graduation-cap"></i> <strong>English:</strong> Medium of Instruction (B.Sc. Eng.)</span>
+              </div>
               <div class="about-hero-text">
                 <p>${esc(p.intro)}</p>
                 ${p.about.map((paragraph) => `<p style="margin-top: 12px;">${esc(paragraph)}</p>`).join("")}
@@ -218,6 +222,43 @@ function renderHome(d) {
           `
             )
             .join("")}
+        </div>
+
+        <!-- LANGUAGE PROFICIENCY SECTION -->
+        <div class="home-languages-container">
+          <div class="languages-glass-card">
+            <div class="languages-card-header">
+              <div class="languages-header-left">
+                <span class="home-badge" style="margin-bottom: 8px;">
+                  <i class="fas fa-language"></i> LANGUAGES
+                </span>
+                <h3 class="languages-title">Language <span class="accent-text">Proficiency</span></h3>
+              </div>
+              <p class="languages-header-desc">Academic and professional linguistic competence for research collaboration, international conferences, and graduate admissions.</p>
+            </div>
+
+            <div class="languages-grid">
+              ${(d.languages || []).map((l) => `
+                <div class="language-card ${l.type === 'native' ? 'lang-native' : 'lang-moi'}">
+                  <div class="language-card-top">
+                    <div class="language-icon-box">
+                      <i class="${l.icon}"></i>
+                    </div>
+                    <div class="language-title-area">
+                      <div class="language-name-row">
+                        <h4 class="language-name">${esc(l.name)}</h4>
+                        ${l.nativeName && l.nativeName !== l.name ? `<span class="language-native-script">(${esc(l.nativeName)})</span>` : ''}
+                      </div>
+                      <span class="language-badge ${l.type === 'native' ? 'badge-native' : 'badge-moi'}">
+                        ${l.type === 'native' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-certificate"></i>'} ${esc(l.proficiency)}
+                      </span>
+                    </div>
+                  </div>
+                  <p class="language-description">${esc(l.description)}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
         </div>
 
       </div>
@@ -264,7 +305,10 @@ function renderEducation(d) {
               <div class="timeline-content">
                 <h2>${esc(e.title)}</h2>
                 <h3>${esc(e.place)}</h3>
-                <div class="timeline-grade">${esc(e.grade)}</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px;">
+                  <div class="timeline-grade">${esc(e.grade)}</div>
+                  ${e.mediumOfInstruction ? `<div class="timeline-grade" style="background: rgba(0, 136, 204, 0.12); color: #0088cc; border: 1px solid rgba(0, 136, 204, 0.35);"><i class="fas fa-certificate"></i> ${esc(e.mediumOfInstruction)}</div>` : ""}
+                </div>
                 ${e.status ? `<p style="font-size: 13.5px; color: var(--primary-accent); font-weight: 600; margin-bottom: 8px;">${esc(e.status)}</p>` : ""}
                 <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">${esc(e.description)}</p>
                 ${
