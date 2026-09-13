@@ -17,6 +17,7 @@ function renderHeader(activePage) {
   const navItems = [
     { label: "Home", href: "index.html", key: "home" },
     { label: "Education", href: "education.html", key: "education" },
+    { label: "Languages", href: "languages.html", key: "languages" },
     { label: "Research", href: "research.html", key: "research" },
     { label: "Publications", href: "publications.html", key: "publications" },
     { label: "Sakura Science", href: "sakura.html", key: "sakura" },
@@ -122,6 +123,7 @@ function renderFooter() {
         <div class="footer-links">
           <a href="index.html">Home</a>
           <a href="education.html">Education</a>
+          <a href="languages.html">Languages</a>
           <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
           <a href="sakura.html">Sakura Science</a>
@@ -191,10 +193,6 @@ function renderHome(d) {
               <p class="home-dept">
                 <i class="fas fa-university"></i> ${esc(p.affiliation)}
               </p>
-              <div class="hero-lang-chips">
-                <span class="hero-lang-chip"><i class="fas fa-comments"></i> <strong>Bangla:</strong> Native Language</span>
-                <span class="hero-lang-chip"><i class="fas fa-graduation-cap"></i> <strong>English:</strong> Medium of Instruction (B.Sc. Eng.)</span>
-              </div>
               <div class="about-hero-text">
                 <p>${esc(p.intro)}</p>
                 ${p.about.map((paragraph) => `<p style="margin-top: 12px;">${esc(paragraph)}</p>`).join("")}
@@ -222,43 +220,6 @@ function renderHome(d) {
           `
             )
             .join("")}
-        </div>
-
-        <!-- LANGUAGE PROFICIENCY SECTION -->
-        <div class="home-languages-container">
-          <div class="languages-glass-card">
-            <div class="languages-card-header">
-              <div class="languages-header-left">
-                <span class="home-badge" style="margin-bottom: 8px;">
-                  <i class="fas fa-language"></i> LANGUAGES
-                </span>
-                <h3 class="languages-title">Language <span class="accent-text">Proficiency</span></h3>
-              </div>
-              <p class="languages-header-desc">Academic and professional linguistic competence for research collaboration, international conferences, and graduate admissions.</p>
-            </div>
-
-            <div class="languages-grid">
-              ${(d.languages || []).map((l) => `
-                <div class="language-card ${l.type === 'native' ? 'lang-native' : 'lang-moi'}">
-                  <div class="language-card-top">
-                    <div class="language-icon-box">
-                      <i class="${l.icon}"></i>
-                    </div>
-                    <div class="language-title-area">
-                      <div class="language-name-row">
-                        <h4 class="language-name">${esc(l.name)}</h4>
-                        ${l.nativeName && l.nativeName !== l.name ? `<span class="language-native-script">(${esc(l.nativeName)})</span>` : ''}
-                      </div>
-                      <span class="language-badge ${l.type === 'native' ? 'badge-native' : 'badge-moi'}">
-                        ${l.type === 'native' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-certificate"></i>'} ${esc(l.proficiency)}
-                      </span>
-                    </div>
-                  </div>
-                  <p class="language-description">${esc(l.description)}</p>
-                </div>
-              `).join('')}
-            </div>
-          </div>
         </div>
 
       </div>
@@ -1043,6 +1004,104 @@ function renderGallery(d) {
   `;
 }
 
+function renderLanguages(d) {
+  $("#page-content").innerHTML = `
+    ${pageHero(
+      "Languages & Medium of Instruction",
+      "Official linguistic verification, native fluency, and academic medium of instruction.",
+      "Bangla (Native Mother Tongue) · English (Official Medium of Instruction for B.Sc. Engineering Degree)",
+      "Language Verification"
+    )}
+
+    <section class="section" style="padding-top: 20px;">
+      <div class="section-container">
+
+        <!-- EXECUTIVE STATEMENT -->
+        <div class="home-hero-card" style="margin-bottom: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <span class="home-badge" style="margin-bottom: 0;">
+              <i class="fas fa-certificate"></i> ACADEMIC COMMUNICATION STATEMENT
+            </span>
+          </div>
+          <h2 style="font-size: clamp(20px, 2.5vw, 26px); font-weight: 800; color: #0b1329; text-transform: uppercase; margin-bottom: 12px;">
+            Linguistic Competence for <span class="accent-text">International Graduate Studies</span>
+          </h2>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px;">
+            As an aspiring international graduate researcher, precise, evidence-backed academic communication is central to my scholarly profile. My academic and research foundation is built on <strong>Bangla</strong> as my native mother tongue and <strong>English</strong> as the sole official Medium of Instruction (MOI) throughout my 4-year Bachelor of Science in Engineering degree at Pabna University of Science and Technology (PUST).
+          </p>
+          <p style="font-size: 14.5px; color: var(--text-dim); line-height: 1.6; margin: 0;">
+            This bilingual capability enables nuanced insight into low-resource natural language processing while maintaining high-level academic fluency across 7 peer-reviewed IEEE conference publications, international oral research defenses in Japan, and global scientific collaborations.
+          </p>
+        </div>
+
+        <!-- CORE LANGUAGE CARDS GRID -->
+        <h2 class="section-title">Verified Language <span class="accent-text">Proficiency</span></h2>
+        <p class="section-subtitle">Formal breakdown of instructional medium, native proficiency, and scholarly communication evidence.</p>
+
+        <div class="lang-page-grid">
+          ${(d.languages || []).map((l) => `
+            <div class="lang-page-card ${l.badgeType === 'native' ? 'card-native' : 'card-moi'}">
+              <div class="lang-page-card-header">
+                <div class="lang-page-icon-box">
+                  <i class="${l.icon}"></i>
+                </div>
+                <div class="lang-page-meta">
+                  <div class="lang-page-title-row">
+                    <h3 class="lang-page-name">${esc(l.name)}</h3>
+                    ${l.nativeName && l.nativeName !== l.name ? `<span class="lang-page-native">(${esc(l.nativeName)})</span>` : ''}
+                  </div>
+                  <span class="language-badge ${l.badgeType === 'native' ? 'badge-native' : 'badge-moi'}">
+                    ${l.badgeType === 'native' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-certificate"></i>'} ${esc(l.badgeText || l.level)}
+                  </span>
+                </div>
+              </div>
+
+              <p class="lang-page-summary">${esc(l.summary)}</p>
+
+              <div class="lang-highlights-list">
+                <h4 class="lang-highlights-heading"><i class="fas fa-list-check"></i> Key Competencies &amp; Evidence</h4>
+                ${(l.highlights || []).map((h) => `
+                  <div class="lang-highlight-item">
+                    <span class="lang-highlight-dot"></span>
+                    <div>
+                      <strong>${esc(h.label)}:</strong>
+                      <span>${esc(h.text)}</span>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- INSTITUTIONAL VERIFICATION CARD -->
+        <div class="home-hero-card" style="margin-top: 40px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+            <div style="max-width: 820px;">
+              <span class="home-badge" style="margin-bottom: 8px;">
+                <i class="fas fa-building-columns"></i> INSTITUTIONAL VERIFICATION
+              </span>
+              <h3 style="font-size: 20px; font-weight: 800; color: #0b1329;">Medium of Instruction (MOI) Institutional Verification</h3>
+              <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin-top: 8px;">
+                Under the academic statutes of Pabna University of Science and Technology (PUST), all undergraduate degree curricula within the Department of Information and Communication Engineering are conducted 100% in the English language. All textbooks, examinations, laboratory practicals, technical reports, seminar presentations, and the final undergraduate research thesis were administered exclusively in English.
+              </p>
+              <p style="color: var(--text-dim); font-size: 13.5px; line-height: 1.5; margin-top: 6px;">
+                This serves as direct institutional verification for graduate admissions committees, fellowship evaluators, and visa authorities requiring English Medium of Instruction (MOI) documentation.
+              </p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px; min-width: 210px;">
+              <a class="btn-primary" href="publications.html"><i class="fas fa-book-open"></i> English Publications (8)</a>
+              <a class="btn-secondary" href="sakura.html"><i class="fas fa-globe-asia"></i> Japan Oral Defense</a>
+              <a class="btn-secondary" href="education.html"><i class="fas fa-graduation-cap"></i> Academic Credentials</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  `;
+}
+
 function init() {
   const page = document.body.dataset.page || "home";
   renderHeader(page);
@@ -1054,6 +1113,9 @@ function init() {
       break;
     case "education":
       renderEducation(d);
+      break;
+    case "languages":
+      renderLanguages(d);
       break;
     case "research":
       renderResearch(d);

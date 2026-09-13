@@ -40,23 +40,41 @@ export const portfolio = {
     {
       name: "Bangla",
       nativeName: "বাংলা",
-      proficiency: "Native Language",
-      type: "native",
+      code: "bn / BGD",
+      level: "Native Language",
+      badgeType: "native",
+      badgeText: "Native / Mother Tongue",
       icon: "fas fa-language",
-      description: "Native language and mother tongue. Complete fluency in spoken, written, and academic communication."
+      summary: "First language and mother tongue. Complete native fluency across oral, written, literary, and technical communication.",
+      highlights: [
+        { label: "Native Fluency", text: "Full native mastery of spoken and written Bangla across colloquial, formal, and academic contexts." },
+        { label: "Bangla NLP Research", text: "Co-authored peer-reviewed research on low-resource language processing: 'Fake News Detection in Bangla: A Transformer Ensemble Framework for Robust Classification' (IEEE ICCIT 2025)." },
+        { label: "Public Speaking & Debate", text: "Inter-batch Parliamentary Debate Champion at ICE Fiesta 2025 with Team Voice of Victory, demonstrating persuasive argumentation and public rhetoric." },
+        { label: "Pedagogical Instruction", text: "Delivered hundreds of hours of ICT and computing lectures in Bangla, mentoring pre-university and college students in digital systems and programming." }
+      ]
     },
     {
       name: "English",
       nativeName: "English",
-      proficiency: "Medium of Instruction (MOI)",
-      type: "moi",
+      code: "en / Academic",
+      level: "Medium of Instruction (MOI)",
+      badgeType: "moi",
+      badgeText: "Medium of Instruction (100% English)",
       icon: "fas fa-graduation-cap",
-      description: "Official Medium of Instruction (MOI) throughout 4-year B.Sc. Engineering degree at Pabna University of Science and Technology (PUST); proficient in scholarly research writing, 7 peer-reviewed IEEE conference publications, international oral defenses, and academic collaboration."
+      summary: "Sole official Medium of Instruction (MOI) throughout the 4-year Bachelor of Science in Engineering degree at Pabna University of Science and Technology (PUST).",
+      highlights: [
+        { label: "100% Medium of Instruction", text: "All undergraduate lectures, laboratory sessions, technical assignments, term examinations, and final degree defense were administered exclusively in English." },
+        { label: "Scholarly Publications", text: "Authored and co-authored 7 peer-reviewed IEEE conference publications and curated 1 Mendeley Data research repository entirely in English." },
+        { label: "International Research Defense", text: "Successfully formulated and defended deep learning research proposal before international faculty in English during the Sakura Science Exchange Program at University of Yamanashi, Japan." },
+        { label: "Oral Conference Defense", text: "Delivered first-author oral presentation and technical defense for the GR-ACE Net paper at IEEE PECCII 2026." },
+        { label: "Academic Writing & Literature", text: "Comprehensive proficiency in technical writing, LaTeX typesetting, literature reviews, and international peer review correspondence." }
+      ]
     }
   ],
 
   portalSections: [
     { icon: "fas fa-graduation-cap", title: "Education", desc: "B.Sc. in ICE at PUST, academic milestones, undergraduate thesis and coursework.", href: "education.html" },
+    { icon: "fas fa-language", title: "Languages", desc: "Native Bangla and English Medium of Instruction (MOI) for B.Sc. Engineering.", href: "languages.html" },
     { icon: "fas fa-microscope", title: "Research", desc: "Core research focus, MangoFruitBD dataset creation, deepfake forensics, and technical toolkit.", href: "research.html" },
     { icon: "fas fa-book-open", title: "Publications", desc: "7 peer-reviewed IEEE conference papers, Mendeley dataset, and DOI links.", href: "publications.html" },
     { icon: "fas fa-globe-asia", title: "Sakura Science", desc: "International academic exchange record at University of Yamanashi, Japan.", href: "sakura.html" },
