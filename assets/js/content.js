@@ -13,7 +13,7 @@ export const portfolio = {
     cv: "assets/documents/Ariful-Islam-CV.pdf",
     portrait: "assets/images/profile-ariful-islam.webp",
     headline: "Engineering practical AI for agriculture, healthcare and trustworthy digital media.",
-    status: "Final B.Sc. examination completed; final result pending.",
+    status: "B.Sc. (Engineering) degree completed; Final CGPA: 3.76 / 4.00.",
     intro:
       "I am an Information and Communication Engineering graduate from Pabna University of Science and Technology with a strong academic foundation in computer vision, deep learning, signal processing, and intelligent systems. My academic journey has been driven by a passion for applied research and solving real-world challenges through data-driven AI, particularly in smart agriculture, medical imaging, deepfake forensics, and low-resource language processing.",
     about: [
@@ -33,7 +33,7 @@ export const portfolio = {
   stats: [
     { value: "7", label: "Peer-reviewed IEEE papers" },
     { value: "1", label: "Published research dataset" },
-    { value: "3.74/4.00", label: "CGPA through 7th semester" },
+    { value: "3.76/4.00", label: "Final CGPA (Graduated)" },
     { value: "Japan", label: "Sakura Science Exchange 2025" }
   ],
 
@@ -297,10 +297,10 @@ export const portfolio = {
       period: "2026",
       title: "B.Sc. (Engineering) in Information and Communication Engineering",
       place: "Pabna University of Science and Technology (PUST), Bangladesh",
-      grade: "CGPA 3.74/4.00 through 7th semester",
-      status: "Final 8th-semester examination completed; final result pending.",
+      grade: "CGPA 3.76/4.00 (Graduated)",
+      status: "4-Year B.Sc. (Engineering) Degree Completed · Result Published",
       mediumOfInstruction: "English (100% Medium of Instruction)",
-      description: "Comprehensive curriculum covering deep learning, image processing, signal processing, wireless communications, programming, microcontrollers, and database engineering. Maintained top-tier academic standing throughout. Medium of Instruction: English.",
+      description: "Comprehensive curriculum covering deep learning, image processing, signal processing, wireless communications, programming, microcontrollers, and database engineering. Graduated with top-tier academic standing (CGPA: 3.76 / 4.00). Medium of Instruction: English.",
       thesis: "Development and Evaluation of a YOLO-Based Mango Fruit Health Detection Framework Using the MangoFruitBD Dataset"
     },
     {
