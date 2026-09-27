@@ -306,7 +306,7 @@ export const portfolio = {
     {
       period: "2019",
       title: "Higher Secondary Certificate (Science)",
-      place: "Ahmedpur Degree College, Natore",
+      place: "Ahmedpur College (1), Natore",
       grade: "GPA 5.00/5.00",
       description: "Achieved the highest grade point average, demonstrating rigorous mathematics, physics, and chemistry proficiency. Awarded the prestigious Dutch-Bangla Bank Limited (DBBL) merit scholarship."
     },
@@ -466,6 +466,19 @@ export const portfolio = {
       file: "assets/documents/certificates/ruec-international-conference-participation.pdf",
       preview: "assets/images/certificates/ruec-international-conference-participation.webp",
       related: "presentations.html"
+    },
+    {
+      id: "ibm-ai-fundamentals",
+      category: "Artificial Intelligence",
+      title: "Artificial Intelligence Fundamentals",
+      issuer: "IBM SkillsBuild",
+      date: "Sep 2026",
+      description: "Credential validating core knowledge of AI concepts, natural language processing, computer vision, machine learning, deep learning, chatbots, neural network architectures, AI ethics, and running models using IBM Watson Studio.",
+      significance: "Industry-recognized credential issued by IBM validating theoretical foundations and practical applications across deep learning and AI architectures.",
+      file: "assets/documents/certificates/ibm-skillsbuild-ai-fundamentals.pdf",
+      preview: "assets/images/certificates/ibm-skillsbuild-ai-fundamentals.webp",
+      verify: "https://www.credly.com/badges/0c0bb958-9881-4da8-b6dd-f1b0161dcafa/public_url",
+      related: "research.html"
     },
     {
       id: "sql-basic",
@@ -877,7 +890,8 @@ export const portfolio = {
         { name: "OpenCV", mark: "CV" },
         { name: "Vision Transformers", mark: "ViT" },
         { name: "scikit-learn", mark: "SK" },
-        { name: "NumPy & Pandas", mark: "NP" }
+        { name: "NumPy & Pandas", mark: "NP" },
+        { name: "IBM Watson Studio", mark: "IBM" }
       ]
     },
     {

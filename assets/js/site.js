@@ -787,10 +787,14 @@ function renderCertifications(d) {
                   <p style="font-size: 13px;">${esc(c.significance)}</p>
                 </div>
               </div>
-              <div>
-                <a class="btn-primary" style="width: 100%; justify-content: center;" href="${c.file}" target="_blank" rel="noopener">
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a class="btn-primary" style="flex: 1 1 140px; justify-content: center;" href="${c.file}" target="_blank" rel="noopener">
                   <i class="fas fa-file-pdf"></i> View Official Document
                 </a>
+                ${c.verify ? `
+                <a class="btn-secondary" style="flex: 1 1 140px; justify-content: center;" href="${c.verify}" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i> Verify Credly Badge
+                </a>` : ""}
               </div>
             </article>
           `
