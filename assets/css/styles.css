@@ -2070,3 +2070,81 @@ img {
   line-height: 1.5;
   margin: 0;
 }
+
+/* ==========================================================================
+   FEATURED HIGHLIGHTS (SAKURA SCIENCE & DATASET IN PUBLICATIONS)
+   ========================================================================== */
+.nav-links a.nav-sakura-highlight {
+  background: linear-gradient(135deg, rgba(0, 136, 204, 0.16), rgba(240, 244, 248, 0.9));
+  border-color: rgba(0, 136, 204, 0.65);
+  color: #0b1329;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0, 136, 204, 0.14);
+}
+
+.nav-links a.nav-sakura-highlight:hover {
+  background: rgba(0, 136, 204, 0.24);
+  border-color: #0088cc;
+  box-shadow: 0 4px 18px rgba(0, 136, 204, 0.28);
+  transform: translateY(-1px);
+}
+
+.portal-card.portal-card-featured {
+  border: 1.5px solid rgba(0, 136, 204, 0.65);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(0, 136, 204, 0.08));
+  box-shadow: 0 10px 28px rgba(0, 136, 204, 0.15);
+  position: relative;
+}
+
+.portal-card.portal-card-featured:hover {
+  border-color: #0088cc;
+  box-shadow: 0 14px 36px rgba(0, 136, 204, 0.28);
+  transform: translateY(-4px);
+}
+
+.portal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0088cc;
+  background: rgba(0, 136, 204, 0.12);
+  border: 1px solid rgba(0, 136, 204, 0.35);
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.btn-secondary.btn-sakura-highlight {
+  border-color: rgba(0, 136, 204, 0.65);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(0, 136, 204, 0.12));
+  box-shadow: 0 4px 14px rgba(0, 136, 204, 0.12);
+  font-weight: 700;
+}
+
+.btn-secondary.btn-sakura-highlight:hover {
+  background: var(--primary-accent);
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+}
+
+.pub-card.pub-card-dataset {
+  border-left: 5px solid #d97706;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(245, 158, 11, 0.06));
+  box-shadow: 0 8px 26px rgba(245, 158, 11, 0.12);
+}
+
+.doi-btn.doi-btn-dataset {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #ffffff;
+  border-color: #b45309;
+}
+
+.doi-btn.doi-btn-dataset:hover {
+  background: #b45309;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}

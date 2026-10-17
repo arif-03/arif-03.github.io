@@ -78,7 +78,7 @@ export const portfolio = {
     { icon: "fas fa-graduation-cap", title: "Education", desc: "B.Sc. in ICE at PUST, academic milestones, undergraduate thesis and coursework.", href: "education.html" },
     { icon: "fas fa-microscope", title: "Research", desc: "Core research focus, MangoFruitBD dataset creation, deepfake forensics, and technical toolkit.", href: "research.html" },
     { icon: "fas fa-book-open", title: "Publications", desc: "7 peer-reviewed IEEE conference papers, Mendeley dataset, and DOI links.", href: "publications.html" },
-    { icon: "fas fa-globe-asia", title: "Sakura Science", desc: "International academic exchange record at University of Yamanashi, Japan.", href: "sakura.html" },
+    { icon: "fas fa-globe-asia", title: "Sakura Science", desc: "International academic exchange record at University of Yamanashi, Japan.", href: "sakura.html", featured: true, badge: "Selected Fellow (JST Japan)" },
     { icon: "fas fa-certificate", title: "Certifications", desc: "Official letters, international certificates, and verified credentials.", href: "certifications.html" },
     { icon: "fas fa-trophy", title: "Achievements", desc: "Merit scholarship, programming contests, debates, and campus awards.", href: "achievements.html" },
     { icon: "fas fa-chalkboard-user", title: "Experiences", desc: "Academic research assistantship, laboratory investigations, and ICT instruction.", href: "experiences.html" },
@@ -175,6 +175,15 @@ export const portfolio = {
 
   publications: [
     {
+      type: "Dataset",
+      year: "2026",
+      title: "MangoFruitBD: A Bounding-Box Annotated Image Dataset for Detecting Healthy and Diseased Mango Fruits in Bangladeshi Orchards",
+      venue: "Mendeley Data, Version 2",
+      authors: "A. Islam, S. A. Oishi, M. M. Hasan, M. Mamun, M. S. Hosain",
+      note: "First author · Dataset Lead",
+      doi: "https://doi.org/10.17632/bhrz29mkmr.2"
+    },
+    {
       type: "Conference Paper",
       year: "2026",
       title: "GR-ACE Net: A Hybrid Graph-Attentional Framework with Global Relational Reasoning for Deepfake Forensics",
@@ -208,7 +217,7 @@ export const portfolio = {
       authors: "K. Ahmad, M. C. Chanda, A. Islam, M. M. Khatun, S. R. Al Ahmed, M. S. Hosain",
       doi: "https://doi.org/10.1109/PECCII70991.2026.11661872"
     },
-        {
+    {
       type: "Conference Paper",
       year: "2024",
       title: "Deep Learning Based Lung Image Segmentation Using XR-U-Net",
@@ -231,16 +240,6 @@ export const portfolio = {
       venue: "2025 28th International Conference on Computer and Information Technology (ICCIT)",
       authors: "S. H. Turza, A. Mahdi, M. I. S. Shad, M. H. Kabir, A. Islam",
       doi: "https://doi.org/10.1109/ICCIT68739.2025.11491228"
-    },
-
-    {
-      type: "Dataset",
-      year: "2026",
-      title: "MangoFruitBD: A Bounding-Box Annotated Image Dataset for Detecting Healthy and Diseased Mango Fruits in Bangladeshi Orchards",
-      venue: "Mendeley Data, Version 2",
-      authors: "A. Islam, S. A. Oishi, M. M. Hasan, M. Mamun, M. S. Hosain",
-      note: "First author · Dataset Lead",
-      doi: "https://doi.org/10.17632/bhrz29mkmr.2"
     }
   ],
 

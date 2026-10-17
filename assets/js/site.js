@@ -19,7 +19,7 @@ function renderHeader(activePage) {
     { label: "Education", href: "education.html", key: "education" },
     { label: "Research", href: "research.html", key: "research" },
     { label: "Publications", href: "publications.html", key: "publications" },
-    { label: "Sakura Science", href: "sakura.html", key: "sakura" },
+    { label: "Sakura Science", href: "sakura.html", key: "sakura", featured: true },
     { label: "Certifications", href: "certifications.html", key: "certifications" },
     { label: "Achievements", href: "achievements.html", key: "achievements" },
     { label: "Experiences", href: "experiences.html", key: "experiences" },
@@ -46,7 +46,7 @@ function renderHeader(activePage) {
           ${navItems
             .map(
               (item) =>
-                `<a class="${activePage === item.key ? "active-nav" : ""}" href="${item.href}">${item.label}</a>`
+                `<a class="${activePage === item.key ? "active-nav" : ""} ${item.featured ? "nav-sakura-highlight" : ""}" href="${item.href}">${item.featured ? `<i class="fas fa-globe-asia" style="color: var(--primary-accent); margin-right: 5px;"></i>` : ""}${item.label}</a>`
             )
             .join("")}
         </nav>
@@ -207,7 +207,7 @@ function renderHome(d) {
                 <a class="btn-primary" href="assets/documents/Ariful-Islam-CV.pdf" download="Ariful_Islam_CV.pdf" target="_blank" rel="noopener"><i class="fas fa-file-arrow-down"></i> Download CV</a>
                 <a class="btn-secondary" href="mailto:${p.email}"><i class="fas fa-envelope"></i> Contact Me</a>
                 <a class="btn-secondary" href="publications.html"><i class="fas fa-book-open"></i> Publications (8)</a>
-                <a class="btn-secondary" href="sakura.html"><i class="fas fa-globe-asia"></i> Sakura Science Record</a>
+                <a class="btn-secondary btn-sakura-highlight" href="sakura.html"><i class="fas fa-globe-asia"></i> Sakura Science Record</a>
                 <a class="btn-secondary" href="education.html"><i class="fas fa-graduation-cap"></i> Academic Credentials</a>
               </div>
             </div>
@@ -242,7 +242,8 @@ function renderHome(d) {
           ${d.portalSections
             .map(
               (sec) => `
-            <a class="portal-card" href="${sec.href}">
+            <a class="portal-card ${sec.featured ? "portal-card-featured" : ""}" href="${sec.href}">
+              ${sec.badge ? `<div class="portal-badge"><i class="fas fa-award"></i> ${esc(sec.badge)}</div>` : ""}
               <div class="portal-icon"><i class="${sec.icon}"></i></div>
               <h3 class="portal-card-title">${esc(sec.title)}</h3>
               <p class="portal-card-desc">${esc(sec.desc)}</p>
@@ -457,14 +458,14 @@ function renderPublications(d) {
   const dataCount = d.publications.filter((p) => p.type === "Dataset").length;
 
   $("#page-content").innerHTML = `
-    ${pageHero("Scholarly Publications & Datasets", "7 Peer-Reviewed IEEE Conference Papers and 1 Published Research Dataset.", "Formal citation structure with verified digital object identifiers (DOI).", "Peer-Reviewed Output")}
+    ${pageHero("Scholarly Publications & Datasets", "1 Published Research Dataset and 7 Peer-Reviewed IEEE Conference Papers.", "Formal citation structure with verified digital object identifiers (DOI).", "Peer-Reviewed Output")}
 
     <section class="section" style="padding-top: 20px;">
       <div class="section-container">
         
         <div class="pub-toolbar">
           <div class="pub-summary">
-            Showing <strong>${confCount} Peer-Reviewed IEEE Papers</strong> and <strong>${dataCount} Published Research Dataset</strong>
+            Showing <strong>${dataCount} Published Research Dataset</strong> (Featured at Top) and <strong>${confCount} Peer-Reviewed IEEE Papers</strong>
           </div>
           <a class="btn-primary" href="https://scholar.google.com/citations?user=J_8UeyoAAAAJ&hl=en" target="_blank" rel="noopener">
             <i class="fas fa-graduation-cap"></i> Google Scholar Profile
@@ -479,12 +480,12 @@ function renderPublications(d) {
                 .replace(/Ariful Islam/g, "<strong>Ariful Islam</strong>");
 
               return `
-                <article class="pub-card">
+                <article class="pub-card ${p.type === "Dataset" ? "pub-card-dataset" : ""}">
                   <div class="pub-index">${String(i + 1).padStart(2, "0")}</div>
                   <div class="pub-body">
                     <div class="pub-topline">
                       <span class="pub-year">${esc(p.year)}</span>
-                      <span class="pub-tag ${p.type === "Dataset" ? "dataset-tag" : ""}">${esc(p.type)}</span>
+                      <span class="pub-tag ${p.type === "Dataset" ? "dataset-tag" : ""}">${p.type === "Dataset" ? `<i class="fas fa-database"></i> ` : ""}${esc(p.type)}</span>
                       ${p.note ? `<span class="pub-tag first-author"><i class="fas fa-star" style="font-size: 10px;"></i> ${esc(p.note)}</span>` : ""}
                     </div>
                     <h2 class="pub-title">${esc(p.title)}</h2>
@@ -494,7 +495,7 @@ function renderPublications(d) {
                   <div class="pub-actions">
                     ${
                       p.doi
-                        ? `<a class="doi-btn" href="${p.doi}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a>`
+                        ? `<a class="doi-btn ${p.type === "Dataset" ? "doi-btn-dataset" : ""}" href="${p.doi}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> ${p.type === "Dataset" ? "Open Mendeley Data" : "DOI"}</a>`
                         : ""
                     }
                   </div>
