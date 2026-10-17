@@ -846,11 +846,49 @@ function renderAchievements(d) {
 
 function renderExperiences(d) {
   $("#page-content").innerHTML = `
-    ${pageHero("Teaching & Professional Experience", "Sustained ICT instruction, curriculum delivery, and academic mentoring.", "Demonstrated pedagogical communication and educational leadership.", "Teaching & Mentorship")}
+    ${pageHero("Research & Professional Experience", "Academic research assistantship, laboratory investigations, and sustained ICT pedagogy.", "Demonstrated empirical research discipline, laboratory stewardship, and educational leadership.", "Research & Experience")}
 
     <section class="section" style="padding-top: 20px;">
       <div class="section-container">
         
+        ${d.researchAssistant ? `
+        <h2 class="section-title">Academic Research Assistantship &amp; <span class="accent-text">Lab Experience</span></h2>
+        <div class="research-case-list" style="margin-bottom: 48px;">
+          <article class="research-case-card" id="research-assistant">
+            <div class="research-case-head">
+              <span class="research-case-period">${esc(d.researchAssistant.period)}</span>
+              ${d.researchAssistant.certificateDoc ? `
+              <a class="btn-primary" style="font-size: 12px; padding: 6px 16px;" href="${d.researchAssistant.certificateDoc}" target="_blank" rel="noopener">
+                <i class="fas fa-file-pdf"></i> View Official Certificate
+              </a>` : ""}
+            </div>
+            <h2 class="research-case-title">${esc(d.researchAssistant.role)} — ${esc(d.researchAssistant.lab)}</h2>
+            <p style="font-size: 14px; font-weight: 600; color: var(--primary-accent); margin-top: -6px; margin-bottom: 12px;">
+              <i class="fas fa-university"></i> ${esc(d.researchAssistant.institution)} &nbsp;|&nbsp; <i class="fas fa-user-tie"></i> Supervisor: ${esc(d.researchAssistant.supervisor)}
+            </p>
+
+            ${d.researchAssistant.certificateImage ? `
+              <div class="media-frame" style="margin-bottom: 18px;">
+                <img src="${d.researchAssistant.certificateImage}" alt="Research Assistant Certificate Preview" loading="lazy">
+              </div>
+            ` : ""}
+
+            <div style="margin-bottom: 14px; font-size: 14px; line-height: 1.7; color: var(--text-muted);">
+              ${d.researchAssistant.narrative.map((p) => `<p style="margin-bottom: 10px;">${esc(p)}</p>`).join("")}
+            </div>
+
+            <div class="learning-box">
+              <span>Laboratory Insight &amp; Research Discipline</span>
+              <p>${esc(d.researchAssistant.learning)}</p>
+            </div>
+
+            <div class="tag-list" style="margin-top: 14px;">
+              ${d.researchAssistant.tags.map((tg) => `<span class="tag-item">${esc(tg)}</span>`).join("")}
+            </div>
+          </article>
+        </div>
+        ` : ""}
+
         <h2 class="section-title">ICT Instruction &amp; <span class="accent-text">Mentorship</span></h2>
         <div class="research-case-list">
           ${d.teaching

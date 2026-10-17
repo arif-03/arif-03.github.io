@@ -336,6 +336,27 @@ export const portfolio = {
     "Computer Architecture and Microcontroller Design"
   ],
 
+  researchAssistant: {
+    period: "Nov 2025–Jul 2026",
+    role: "Research Assistant",
+    lab: "Computer Vision and Research Laboratory",
+    department: "Department of Information and Communication Engineering",
+    institution: "Pabna University of Science and Technology (PUST)",
+    supervisor: "Prof. Dr. Md. Anwar Hossain",
+    project: "Development and Evaluation of a YOLO-Based Mango Fruit Health Detection Framework Using the MangoFruitBD Dataset",
+    certificateImage: "assets/images/certificates/research-assistant-certificate.webp",
+    certificateDoc: "assets/documents/certificates/research-assistant-certificate.pdf",
+    narrative: [
+      "Appointed as a Research Assistant under the supervision of Prof. Dr. Md. Anwar Hossain at the Computer Vision and Research Laboratory, PUST.",
+      "Spearheaded field data collection and rigorous bounding-box annotation across local orchards, curating 1,310 high-resolution images for the open-access MangoFruitBD repository.",
+      "Trained, fine-tuned, and benchmarked advanced YOLO object-detection models to accurately identify multiple fruit health conditions despite outdoor occlusions and variable natural lighting.",
+      "Authored and submitted a first-author comprehensive research manuscript based on our empirical findings to Elsevier's Q1 journal, Computers and Electronics in Agriculture.",
+      "This laboratory appointment solidified my experimental discipline in reproducible AI pipelines, error analysis, and bridging agricultural domain needs with deep learning solutions."
+    ],
+    learning: "Working in the laboratory reinforced that robust machine learning begins long before model training—it requires meticulous data engineering, critical edge-case diagnosis, and constant empirical verification.",
+    tags: ["Computer Vision", "Deep Learning", "YOLOv8 / YOLOv11", "MangoFruitBD", "Precision Agriculture", "Dataset Engineering"]
+  },
+
   teaching: [
     {
       period: "2023–Jun 2026",
@@ -466,6 +487,18 @@ export const portfolio = {
       file: "assets/documents/certificates/ruec-international-conference-participation.pdf",
       preview: "assets/images/certificates/ruec-international-conference-participation.webp",
       related: "presentations.html"
+    },
+    {
+      id: "ra-certificate",
+      category: "Research",
+      title: "Research Assistant Certificate",
+      issuer: "Computer Vision and Research Laboratory, PUST",
+      date: "Nov 2025 – Jul 2026",
+      description: "Official certificate validating appointment and research assistantship under Prof. Dr. Md. Anwar Hossain for the project 'Development and Evaluation of a YOLO-Based Mango Fruit Health Detection Framework Using the MangoFruitBD Dataset'.",
+      significance: "Formal evidence of faculty-supervised laboratory research, dataset curation, deep learning model benchmarking, and journal manuscript preparation.",
+      file: "assets/documents/certificates/research-assistant-certificate.pdf",
+      preview: "assets/images/certificates/research-assistant-certificate.webp",
+      related: "experiences.html"
     },
     {
       id: "ibm-ai-fundamentals",
@@ -950,6 +983,7 @@ export const portfolio = {
     { category: "Sakura Science", title: "Program cultural excursion in Yamanashi prefecture", image: "assets/images/sakura-cultural-visit.webp" },
     { category: "Sakura Science", title: "National daily newspaper feature on Sakura delegation", image: "assets/images/sakura-news-coverage.webp" },
     { category: "Research", title: "Presenting GR-ACE Net first-author paper at IEEE PECCII 2026", image: "assets/images/grace-net-peccii-presentation.webp" },
+    { category: "Research", title: "Appointed Research Assistant Certificate (Computer Vision Lab, PUST)", image: "assets/images/certificates/research-assistant-certificate.webp" },
     { category: "Research", title: "Receiving presentation certificate from PECCII session chair", image: "assets/images/peccii-session-chair-certificate.webp" },
     { category: "Research", title: "IEEE QPAIN 2026 paper presentation token of appreciation", image: "assets/images/qpain-paper-presentation-token.webp" },
     { category: "Media", title: "Television discussion on social media impact (Somoy TV)", image: "assets/images/somoy-tv-social-media-talk.webp" },
