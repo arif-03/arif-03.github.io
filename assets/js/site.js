@@ -17,15 +17,15 @@ function renderHeader(activePage) {
   const navItems = [
     { label: "Home", href: "index.html", key: "home" },
     { label: "Education", href: "education.html", key: "education" },
-    { label: "Languages", href: "languages.html", key: "languages" },
     { label: "Research", href: "research.html", key: "research" },
     { label: "Publications", href: "publications.html", key: "publications" },
     { label: "Sakura Science", href: "sakura.html", key: "sakura" },
-    { label: "Projects", href: "projects.html", key: "projects" },
     { label: "Certifications", href: "certifications.html", key: "certifications" },
     { label: "Achievements", href: "achievements.html", key: "achievements" },
     { label: "Experiences", href: "experiences.html", key: "experiences" },
     { label: "Extra-Curricular", href: "extracurricular.html", key: "extracurricular" },
+    { label: "Languages", href: "languages.html", key: "languages" },
+    { label: "Projects", href: "projects.html", key: "projects" },
     { label: "Presentations", href: "presentations.html", key: "presentations" },
     { label: "Gallery", href: "gallery.html", key: "gallery" }
   ];
@@ -128,15 +128,15 @@ function renderFooter() {
         <div class="footer-links">
           <a href="index.html">Home</a>
           <a href="education.html">Education</a>
-          <a href="languages.html">Languages</a>
           <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
           <a href="sakura.html">Sakura Science</a>
-          <a href="projects.html">Projects</a>
           <a href="certifications.html">Certifications</a>
           <a href="achievements.html">Achievements</a>
           <a href="experiences.html">Experiences</a>
           <a href="extracurricular.html">Extra-Curricular</a>
+          <a href="languages.html">Languages</a>
+          <a href="projects.html">Projects</a>
           <a href="presentations.html">Presentations</a>
           <a href="gallery.html">Gallery</a>
           <a href="assets/documents/Ariful-Islam-CV.pdf" download="Ariful_Islam_CV.pdf" target="_blank" rel="noopener" style="color: var(--primary-accent); font-weight: 700;"><i class="fas fa-file-arrow-down"></i> Download CV</a>

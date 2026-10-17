@@ -76,15 +76,15 @@ export const portfolio = {
 
   portalSections: [
     { icon: "fas fa-graduation-cap", title: "Education", desc: "B.Sc. in ICE at PUST, academic milestones, undergraduate thesis and coursework.", href: "education.html" },
-    { icon: "fas fa-language", title: "Languages", desc: "Native Bangla and English Medium of Instruction (MOI) for B.Sc. Engineering.", href: "languages.html" },
     { icon: "fas fa-microscope", title: "Research", desc: "Core research focus, MangoFruitBD dataset creation, deepfake forensics, and technical toolkit.", href: "research.html" },
     { icon: "fas fa-book-open", title: "Publications", desc: "7 peer-reviewed IEEE conference papers, Mendeley dataset, and DOI links.", href: "publications.html" },
     { icon: "fas fa-globe-asia", title: "Sakura Science", desc: "International academic exchange record at University of Yamanashi, Japan.", href: "sakura.html" },
-    { icon: "fas fa-laptop-code", title: "Projects", desc: "Technical, embedded systems, and database case studies with evidence.", href: "projects.html" },
     { icon: "fas fa-certificate", title: "Certifications", desc: "Official letters, international certificates, and verified credentials.", href: "certifications.html" },
     { icon: "fas fa-trophy", title: "Achievements", desc: "Merit scholarship, programming contests, debates, and campus awards.", href: "achievements.html" },
-    { icon: "fas fa-chalkboard-user", title: "Experiences", desc: "ICT teaching, pedagogical instruction, and academic mentoring.", href: "experiences.html" },
+    { icon: "fas fa-chalkboard-user", title: "Experiences", desc: "Academic research assistantship, laboratory investigations, and ICT instruction.", href: "experiences.html" },
     { icon: "fas fa-users-gear", title: "Extra-Curricular", desc: "Student leadership, welfare governance, youth development, and club administration.", href: "extracurricular.html" },
+    { icon: "fas fa-language", title: "Languages", desc: "Native Bangla and English Medium of Instruction (MOI) for B.Sc. Engineering.", href: "languages.html" },
+    { icon: "fas fa-laptop-code", title: "Projects", desc: "Technical, embedded systems, and database case studies with evidence.", href: "projects.html" },
     { icon: "fas fa-chalkboard-teacher", title: "Presentations", desc: "Conference presentations, Japan Sakura research proposal, and media outreach.", href: "presentations.html" },
     { icon: "fas fa-images", title: "Gallery", desc: "Visual records from Japan, research presentations, and campus events.", href: "gallery.html" }
   ],
